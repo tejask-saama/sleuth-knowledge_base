@@ -1,0 +1,2409 @@
+**Table: allstarfull**: Contains information about players' participation in All-Star games.
+
+- **Columns (Exact Names):**
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 1634 (unique players)
+       ├── Value Distribution: Not unique, indicates multiple entries for players
+       └── Null%: 0%
+  
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of the All-Star game
+    └── Value Profile:
+       ├── Cardinality: 80 (years)
+       ├── Value Distribution: Range from 1933 to 2012, mean of 1974.58
+       └── Null%: 0%
+  
+  - **`gameNum`** (CATEGORICAL):
+    ├── Business Meaning: Number of the game in the series
+    └── Value Profile:
+       ├── Cardinality: 3 (game numbers)
+       ├── Value Distribution: Highly concentrated, indicating limited game numbers
+       └── Null%: 0%
+  
+  - **`gameID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each game
+    └── Value Profile:
+       ├── Cardinality: 83 (unique games)
+       ├── Value Distribution: Not unique, suggests multiple games per player
+       └── Null%: 0%
+  
+  - **`teamID`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the team the player represented
+    └── Value Profile:
+       ├── Cardinality: 45 (teams)
+       ├── Value Distribution: Not unique, indicating multiple teams represented
+       └── Null%: 0%
+  
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the league (AL or NL)
+    └── Value Profile:
+       ├── Cardinality: 2 (leagues)
+       ├── Value Distribution: Not unique, indicates two leagues
+       └── Null%: 0%
+  
+  - **`GP`** (CATEGORICAL):
+    ├── Business Meaning: Games played by the player
+    └── Value Profile:
+       ├── Cardinality: 2 (game participation)
+       ├── Value Distribution: Not unique, indicates limited game participation
+       └── Null%: 0.76%
+  
+  - **`startingPos`** (NUMERIC):
+    ├── Business Meaning: Position the player started in the game
+    └── Value Profile:
+       ├── Cardinality: 11 (positions)
+       ├── Value Distribution: Range from 0 to 10, mean of 5.06
+       └── Null%: 0%
+
+**Table: appearances**: Contains data on player appearances in games.
+
+- **Columns (Exact Names):**
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of the player's appearances
+    └── Value Profile:
+       ├── Cardinality: 142 (years)
+       ├── Value Distribution: Range from 1871 to 2012, mean of 1958.83
+       └── Null%: 0%
+  
+  - **`teamID`** (TEXT):
+    ├── Business Meaning: Identifier for the team the player appeared for
+    └── Value Profile:
+       ├── Cardinality: 150 (teams)
+       ├── Value Distribution: Not unique, indicating multiple teams
+       └── Null%: 0%
+  
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the league (AL or NL)
+    └── Value Profile:
+       ├── Cardinality: 7 (leagues)
+       ├── Value Distribution: Not unique, indicates multiple leagues
+       └── Null%: 0%
+  
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 16405 (unique players)
+       ├── Value Distribution: Not unique, indicating many players
+       └── Null%: 0%
+  
+  - **`G_all`** (NUMERIC):
+    ├── Business Meaning: Total games played by the player
+    └── Value Profile:
+       ├── Cardinality: 166 (game counts)
+       ├── Value Distribution: Range from 0 to 165, mean of 52.13
+       └── Null%: 0%
+  
+  - **`G_batting`** (NUMERIC):
+    ├── Business Meaning: Games played as a batter
+    └── Value Profile:
+       ├── Cardinality: 164 (game counts)
+       ├── Value Distribution: Range from 0 to 163, mean of 35.37
+       └── Null%: 0%
+  
+  - **`G_defense`** (NUMERIC):
+    ├── Business Meaning: Games played in defensive positions
+    └── Value Profile:
+       ├── Cardinality: 166 (game counts)
+       ├── Value Distribution: Range from 0 to 165, mean of 49.57
+       └── Null%: 0%
+  
+  - **`G_p`** (NUMERIC):
+    ├── Business Meaning: Games played as a pitcher
+    └── Value Profile:
+       ├── Cardinality: 166 (game counts)
+       ├── Value Distribution: Range from 0 to 165, mean of 49.49
+       └── Null%: 0%
+  
+  - **`G_c`** (NUMERIC):
+    ├── Business Meaning: Games played as a catcher
+    └── Value Profile:
+       ├── Cardinality: 95 (game counts)
+       ├── Value Distribution: Range from 0 to 106, mean of 10.06
+       └── Null%: 0%
+  
+  - **`G_1b`** (NUMERIC):
+    ├── Business Meaning: Games played as a first baseman
+    └── Value Profile:
+       ├── Cardinality: 157 (game counts)
+       ├── Value Distribution: Range from 0 to 160, mean of 4.88
+       └── Null%: 0%
+  
+  - **`G_2b`** (NUMERIC):
+    ├── Business Meaning: Games played as a second baseman
+    └── Value Profile:
+       ├── Cardinality: 163 (game counts)
+       ├── Value Distribution: Range from 0 to 162, mean of 4.74
+       └── Null%: 0%
+  
+  - **`G_3b`** (NUMERIC):
+    ├── Business Meaning: Games played as a third baseman
+    └── Value Profile:
+       ├── Cardinality: 164 (game counts)
+       ├── Value Distribution: Range from 0 to 163, mean of 4.70
+       └── Null%: 0%
+  
+  - **`G_ss`** (NUMERIC):
+    ├── Business Meaning: Games played as a shortstop
+    └── Value Profile:
+       ├── Cardinality: 165 (game counts)
+       ├── Value Distribution: Range from 0 to 164, mean of 4.72
+       └── Null%: 0%
+  
+  - **`G_lf`** (NUMERIC):
+    ├── Business Meaning: Games played as a left fielder
+    └── Value Profile:
+       ├── Cardinality: 166 (game counts)
+       ├── Value Distribution: Range from 0 to 165, mean of 4.70
+       └── Null%: 0%
+  
+  - **`G_cf`** (NUMERIC):
+    ├── Business Meaning: Games played as a center fielder
+    └── Value Profile:
+       ├── Cardinality: 164 (game counts)
+       ├── Value Distribution: Range from 0 to 163, mean of 4.94
+       └── Null%: 0%
+  
+  - **`G_rf`** (NUMERIC):
+    ├── Business Meaning: Games played as a right fielder
+    └── Value Profile:
+       ├── Cardinality: 163 (game counts)
+       ├── Value Distribution: Range from 0 to 162, mean of 4.66
+       └── Null%: 0%
+  
+  - **`G_of`** (NUMERIC):
+    ├── Business Meaning: Games played as an outfielder
+    └── Value Profile:
+       ├── Cardinality: 163 (game counts)
+       ├── Value Distribution: Range from 0 to 162, mean of 4.82
+       └── Null%: 0%
+  
+  - **`G_dh`** (NUMERIC):
+    ├── Business Meaning: Games played as a designated hitter
+    └── Value Profile:
+       ├── Cardinality: 165 (game counts)
+       ├── Value Distribution: Range from 0 to 164, mean of 14.13
+       └── Null%: 0%
+  
+  - **`G_ph`** (NUMERIC):
+    ├── Business Meaning: Games played as a pinch hitter
+    └── Value Profile:
+       ├── Cardinality: 157 (game counts)
+       ├── Value Distribution: Range from 0 to 162, mean of 2.05
+       └── Null%: 0%
+  
+  - **`G_pr`** (NUMERIC):
+    ├── Business Meaning: Games played as a pinch runner
+    └── Value Profile:
+       ├── Cardinality: 93 (game counts)
+       ├── Value Distribution: Range from 0 to 95, mean of 4.76
+       └── Null%: 0%
+
+**Table: awardsmanagers**: Contains information about awards received by managers.
+
+- **Columns (Exact Names):**
+  - **`managerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each manager
+    └── Value Profile:
+       ├── Cardinality: 74 (unique managers)
+       ├── Value Distribution: Not unique, indicating multiple awards for managers
+       └── Null%: 0%
+  
+  - **`awardID`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the type of award
+    └── Value Profile:
+       ├── Cardinality: 2 (award types)
+       ├── Value Distribution: Not unique, indicates limited award types
+       └── Null%: 0%
+  
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year the award was received
+    └── Value Profile:
+       ├── Cardinality: 77 (years)
+       ├── Value Distribution: Range from 1936 to 2012, mean of 1985.29
+       └── Null%: 0%
+  
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the league (AL or NL)
+    └── Value Profile:
+       ├── Cardinality: 3 (leagues)
+       ├── Value Distribution: Not unique, indicates multiple leagues
+       └── Null%: 0%
+  
+  - **`tie`** (BOOLEAN):
+    ├── Business Meaning: Indicates if there was a tie for the award
+    └── Value Profile:
+       ├── Cardinality: 1 (no ties)
+       ├── Value Distribution: Indicates whether there was a tie
+       └── Null%: 0%
+  
+  - **`notes`** (UNSUPPORTED):
+    ├── Business Meaning: Additional notes regarding the award
+    └── Value Profile:
+       ├── Cardinality: 0 (no notes)
+       ├── Value Distribution: No notes provided
+       └── Null%: 0%
+
+**Table: awardsplayers**: Contains information about awards received by players.
+
+- **Columns (Exact Names):**
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 1213 (unique players)
+       ├── Value Distribution: Not unique, indicating multiple awards for players
+       └── Null%: 0%
+  
+  - **`awardID`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the type of award
+    └── Value Profile:
+       ├── Cardinality: 27 (award types)
+       ├── Value Distribution: Not unique, indicates various award types
+       └── Null%: 0%
+  
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year the award was received
+    └── Value Profile:
+       ├── Cardinality: 114 (years)
+       ├── Value Distribution: Range from 1877 to 2012, mean of 1966.36
+       └── Null%: 0%
+  
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the league (AL or NL)
+    └── Value Profile:
+       ├── Cardinality: 4 (leagues)
+       ├── Value Distribution: Not unique, indicates multiple leagues
+       └── Null%: 0%
+  
+  - **`tie`** (BOOLEAN):
+    ├── Business Meaning: Indicates if there was a tie for the award
+    └── Value Profile:
+       ├── Cardinality: 1 (no ties)
+       ├── Value Distribution: Indicates whether there was a tie
+       └── Null%: 0%
+  
+  - **`notes`** (CATEGORICAL):
+    ├── Business Meaning: Additional notes regarding the award
+    └── Value Profile:
+       ├── Cardinality: 28 (various notes)
+       ├── Value Distribution: Various notes provided
+       └── Null%: 22.67%
+
+**Table: awardssharemanagers**: Contains information about points awarded to managers for their performance.
+
+- **Columns (Exact Names):**
+  - **`awardID`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the type of award
+    └── Value Profile:
+       ├── Cardinality: 2 (award types)
+       ├── Value Distribution: Not unique, indicates limited award types
+       └── Null%: 0%
+  
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year the points were awarded
+    └── Value Profile:
+       ├── Cardinality: 30 (years)
+       ├── Value Distribution: Range from 1983 to 2012, mean of 1998.17
+       └── Null%: 0%
+  
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the league (AL or NL)
+    └── Value Profile:
+       ├── Cardinality: 2 (leagues)
+       ├── Value Distribution: Not unique, indicates multiple leagues
+       └── Null%: 0%
+  
+  - **`managerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each manager
+    └── Value Profile:
+       ├── Cardinality: 103 (unique managers)
+       ├── Value Distribution: Not unique, indicating multiple managers
+       └── Null%: 0%
+  
+  - **`pointsWon`** (NUMERIC):
+    ├── Business Meaning: Points awarded to the manager
+    └── Value Profile:
+       ├── Cardinality: 110 (point values)
+       ├── Value Distribution: Range from 1 to 154, mean of 40.03
+       └── Null%: 0%
+  
+  - **`pointsMax`** (CATEGORICAL):
+    ├── Business Meaning: Maximum points possible for the award
+    └── Value Profile:
+       ├── Cardinality: 5 (maximum points)
+       ├── Value Distribution: Not unique, indicates various maximum points
+       └── Null%: 0%
+  
+  - **`votesFirst`** (NUMERIC):
+    ├── Business Meaning: Number of first-place votes received
+    └── Value Profile:
+       ├── Cardinality: 30 (vote counts)
+       ├── Value Distribution: Range from 0 to 30, mean of 4.57
+       └── Null%: 0%
+
+**Table: awardsshareplayers**: Data on player awards, detailing points won and voting results.
+
+- **Columns (Exact Names):**
+  - **`awardID`** (CATEGORICAL):
+    ├── Business Meaning: Type of award given to players
+    └── Value Profile:
+       ├── Cardinality: 3 (unique awards)
+       ├─── Value Distribution: Highly concentrated
+       └─── Null%: 0%
+  
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year the award was given
+    └── Value Profile:
+       ├── Cardinality: 94 (years)
+       ├─── Value Distribution: Range from 1911 to 2012, slightly negatively skewed
+       └─── Null%: 0%
+
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: League identifier
+    └── Value Profile:
+       ├── Cardinality: 3 (unique leagues)
+       ├─── Value Distribution: Highly concentrated
+       └─── Null%: 0%
+
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 2157 (unique players)
+       ├─── Value Distribution: Diverse player representation
+       └─── Null%: 0%
+
+  - **`pointsWon`** (NUMERIC):
+    ├── Business Meaning: Points awarded to the player
+    └── Value Profile:
+       ├── Cardinality: 330 (unique point values)
+       ├─── Value Distribution: Highly skewed with a mean of 42.6
+       └─── Null%: 0%
+
+  - **`pointsMax`** (NUMERIC):
+    ├── Business Meaning: Maximum possible points for the award
+    └── Value Profile:
+       ├── Cardinality: 18 (unique max points)
+       ├─── Value Distribution: Range from 16 to 448, moderately skewed
+       └─── Null%: 0%
+
+  - **`votesFirst`** (NUMERIC):
+    ├── Business Meaning: Number of first-place votes received
+    └── Value Profile:
+       ├── Cardinality: 33 (unique vote counts)
+       ├─── Value Distribution: Highly skewed with a mean of 1.57
+       └─── Null%: 0%
+
+**Table: batting**: Player batting statistics across various seasons.
+
+- **Columns (Exact Names):**
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 16405 (unique players)
+       ├─── Value Distribution: Diverse player representation
+       └─── Null%: 0%
+
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of the batting statistics
+    └── Value Profile:
+       ├── Cardinality: 142 (years)
+       ├─── Value Distribution: Range from 1871 to 2012, slightly negatively skewed
+       └─── Null%: 0%
+
+  - **`stint`** (CATEGORICAL):
+    ├── Business Meaning: Stint of the player in the season
+    └── Value Profile:
+       ├── Cardinality: 5 (unique stints)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`teamID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each team
+    └── Value Profile:
+       ├── Cardinality: 149 (unique teams)
+       ├─── Value Distribution: Diverse team representation
+       └─── Null%: 0%
+
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: League identifier
+    └── Value Profile:
+       ├── Cardinality: 7 (unique leagues)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`G`** (NUMERIC):
+    ├── Business Meaning: Games played by the player
+    └── Value Profile:
+       ├── Cardinality: 165 (unique game counts)
+       ├─── Value Distribution: Range from 1 to 165, moderately skewed
+       └─── Null%: 0%
+
+  - **`G_batting`** (NUMERIC):
+    ├── Business Meaning: Games in which the player batted
+    └── Value Profile:
+       ├── Cardinality: 166 (unique batting game counts)
+       ├─── Value Distribution: Range from 0 to 165, moderately skewed
+       └─── Null%: 0%
+
+  - **`AB`** (NUMERIC):
+    ├── Business Meaning: At-bats by the player
+    └── Value Profile:
+       ├── Cardinality: 698 (unique at-bat counts)
+       ├─── Value Distribution: Range from 0 to 716, moderately skewed
+       └─── Null%: 0%
+
+  - **`R`** (NUMERIC):
+    ├── Business Meaning: Runs scored by the player
+    └── Value Profile:
+       ├── Cardinality: 167 (unique run counts)
+       ├─── Value Distribution: Range from 0 to 192, moderately skewed
+       └─── Null%: 0%
+
+  - **`H`** (NUMERIC):
+    ├── Business Meaning: Hits made by the player
+    └── Value Profile:
+       ├── Cardinality: 250 (unique hit counts)
+       ├─── Value Distribution: Range from 0 to 262, moderately skewed
+       └─── Null%: 0%
+
+  - **`2B`** (NUMERIC):
+    ├── Business Meaning: Doubles hit by the player
+    └── Value Profile:
+       ├── Cardinality: 64 (unique double counts)
+       ├─── Value Distribution: Range from 0 to 67, moderately skewed
+       └─── Null%: 0%
+
+  - **`3B`** (NUMERIC):
+    ├── Business Meaning: Triples hit by the player
+    └── Value Profile:
+       ├── Cardinality: 32 (unique triple counts)
+       ├─── Value Distribution: Range from 0 to 36, highly skewed
+       └─── Null%: 0%
+
+  - **`HR`** (NUMERIC):
+    ├── Business Meaning: Home runs hit by the player
+    └── Value Profile:
+       ├── Cardinality: 66 (unique home run counts)
+       ├─── Value Distribution: Range from 0 to 73, highly skewed
+       └─── Null%: 0%
+
+  - **`RBI`** (NUMERIC):
+    ├── Business Meaning: Runs batted in by the player
+    └── Value Profile:
+       ├── Cardinality: 175 (unique RBI counts)
+       ├─── Value Distribution: Range from 0 to 191, moderately skewed
+       └─── Null%: 0%
+
+  - **`SB`** (NUMERIC):
+    ├── Business Meaning: Stolen bases by the player
+    └── Value Profile:
+       ├── Cardinality: 114 (unique stolen base counts)
+       ├─── Value Distribution: Range from 0 to 138, highly skewed
+       └─── Null%: 0%
+
+  - **`CS`** (NUMERIC):
+    ├── Business Meaning: Caught stealing by the player
+    └── Value Profile:
+       ├── Cardinality: 36 (unique caught stealing counts)
+       ├─── Value Distribution: Range from 0 to 42, highly skewed
+       └─── Null%: 0%
+
+  - **`BB`** (NUMERIC):
+    ├── Business Meaning: Walks received by the player
+    └── Value Profile:
+       ├── Cardinality: 154 (unique walk counts)
+       ├─── Value Distribution: Range from 0 to 232, moderately skewed
+       └─── Null%: 0%
+
+  - **`SO`** (NUMERIC):
+    ├── Business Meaning: Strikeouts by the player
+    └── Value Profile:
+       ├── Cardinality: 193 (unique strikeout counts)
+       ├─── Value Distribution: Range from 0 to 222, moderately skewed
+       └─── Null%: 0%
+
+  - **`IBB`** (NUMERIC):
+    ├── Business Meaning: Intentional walks received by the player
+    └── Value Profile:
+       ├── Cardinality: 45 (unique intentional walk counts)
+       ├─── Value Distribution: Range from 0 to 120, highly skewed
+       └─── Null%: 0%
+
+  - **`HBP`** (NUMERIC):
+    ├── Business Meaning: Hit by pitch occurrences
+    └── Value Profile:
+       ├── Cardinality: 41 (unique hit by pitch counts)
+       ├─── Value Distribution: Range from 0 to 51, highly skewed
+       └─── Null%: 0%
+
+  - **`SH`** (NUMERIC):
+    ├── Business Meaning: Sacrifice hits by the player
+    └── Value Profile:
+       ├── Cardinality: 54 (unique sacrifice hit counts)
+       ├─── Value Distribution: Range from 0 to 67, highly skewed
+       └─── Null%: 0%
+
+  - **`SF`** (NUMERIC):
+    ├── Business Meaning: Sacrifice flies by the player
+    └── Value Profile:
+       ├── Cardinality: 20 (unique sacrifice fly counts)
+       ├─── Value Distribution: Range from 0 to 19, highly skewed
+       └─── Null%: 0%
+
+  - **`GIDP`** (NUMERIC):
+    ├── Business Meaning: Grounded into double plays by the player
+    └── Value Profile:
+       ├── Cardinality: 35 (unique GIDP counts)
+       ├─── Value Distribution: Range from 0 to 36, highly skewed
+       └─── Null%: 0%
+
+**Table: battingpost**: Player performance in postseason games.
+
+- **Columns (Exact Names):**
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of the postseason statistics
+    └── Value Profile:
+       ├── Cardinality: 116 (years)
+       ├─── Value Distribution: Range from 1884 to 2012, slightly negatively skewed
+       └─── Null%: 0%
+
+  - **`round`** (CATEGORICAL):
+    ├── Business Meaning: Round of the postseason
+    └── Value Profile:
+       ├── Cardinality: 14 (unique rounds)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 3391 (unique players)
+       ├─── Value Distribution: Diverse player representation
+       └─── Null%: 0%
+
+  - **`teamID`** (CATEGORICAL):
+    ├── Business Meaning: Unique identifier for each team
+    └── Value Profile:
+       ├── Cardinality: 48 (unique teams)
+       ├─── Value Distribution: Diverse team representation
+       └─── Null%: 0%
+
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: League identifier
+    └── Value Profile:
+       ├── Cardinality: 3 (unique leagues)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`G`** (NUMERIC):
+    ├── Business Meaning: Games played in the postseason
+    └── Value Profile:
+       ├── Cardinality: 14 (unique game counts)
+       ├─── Value Distribution: Range from 1 to 15, moderately skewed
+       └─── Null%: 0%
+
+  - **`AB`** (NUMERIC):
+    ├── Business Meaning: At-bats in the postseason
+    └── Value Profile:
+       ├── Cardinality: 52 (unique at-bat counts)
+       ├─── Value Distribution: Range from 0 to 66, moderately skewed
+       └─── Null%: 0%
+
+  - **`R`** (NUMERIC):
+    ├── Business Meaning: Runs scored in the postseason
+    └── Value Profile:
+       ├── Cardinality: 13 (unique run counts)
+       ├─── Value Distribution: Range from 0 to 13, highly skewed
+       └─── Null%: 0%
+
+  - **`H`** (NUMERIC):
+    ├── Business Meaning: Hits made in the postseason
+    └── Value Profile:
+       ├── Cardinality: 19 (unique hit counts)
+       ├─── Value Distribution: Range from 0 to 21, moderately skewed
+       └─── Null%: 0%
+
+  - **`2B`** (NUMERIC):
+    ├── Business Meaning: Doubles hit in the postseason
+    └── Value Profile:
+       ├── Cardinality: 7 (unique double counts)
+       ├─── Value Distribution: Range from 0 to 6, highly skewed
+       └─── Null%: 0%
+
+  - **`3B`** (NUMERIC):
+    ├── Business Meaning: Triples hit in the postseason
+    └── Value Profile:
+       ├── Cardinality: 5 (unique triple counts)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`HR`** (NUMERIC):
+    ├── Business Meaning: Home runs hit in the postseason
+    └── Value Profile:
+       ├── Cardinality: 7 (unique home run counts)
+       ├─── Value Distribution: Range from 0 to 6, highly skewed
+       └─── Null%: 0%
+
+  - **`RBI`** (NUMERIC):
+    ├── Business Meaning: Runs batted in during the postseason
+    └── Value Profile:
+       ├── Cardinality: 14 (unique RBI counts)
+       ├─── Value Distribution: Range from 0 to 13, highly skewed
+       └─── Null%: 0%
+
+  - **`SB`** (NUMERIC):
+    ├── Business Meaning: Stolen bases in the postseason
+    └── Value Profile:
+       ├── Cardinality: 12 (unique stolen base counts)
+       ├─── Value Distribution: Range from 0 to 15, highly skewed
+       └─── Null%: 0%
+
+  - **`CS`** (NUMERIC):
+    ├── Business Meaning: Caught stealing in the postseason
+    └── Value Profile:
+       ├── Cardinality: 6 (unique caught stealing counts)
+       ├─── Value Distribution: Range from 0 to 5, highly skewed
+       └─── Null%: 0%
+
+  - **`BB`** (NUMERIC):
+    ├── Business Meaning: Walks received in the postseason
+    └── Value Profile:
+       ├── Cardinality: 14 (unique walk counts)
+       ├─── Value Distribution: Range from 0 to 13, highly skewed
+       └─── Null%: 0%
+
+  - **`SO`** (NUMERIC):
+    ├── Business Meaning: Strikeouts in the postseason
+    └── Value Profile:
+       ├── Cardinality: 14 (unique strikeout counts)
+       ├─── Value Distribution: Range from 0 to 13, highly skewed
+       └─── Null%: 0%
+
+  - **`IBB`** (NUMERIC):
+    ├── Business Meaning: Intentional walks received in the postseason
+    └── Value Profile:
+       ├── Cardinality: 8 (unique intentional walk counts)
+       ├─── Value Distribution: Range from 0 to 7, highly skewed
+       └─── Null%: 0%
+
+  - **`HBP`** (CATEGORICAL):
+    ├── Business Meaning: Hit by pitch occurrences in the postseason
+    └── Value Profile:
+       ├── Cardinality: 5 (unique hit by pitch counts)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`SH`** (NUMERIC):
+    ├── Business Meaning: Sacrifice hits in the postseason
+    └── Value Profile:
+       ├── Cardinality: 6 (unique sacrifice hit counts)
+       ├─── Value Distribution: Range from 0 to 5, highly skewed
+       └─── Null%: 0%
+
+  - **`SF`** (CATEGORICAL):
+    ├── Business Meaning: Sacrifice flies in the postseason
+    └── Value Profile:
+       ├── Cardinality: 4 (unique sacrifice fly counts)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`GIDP`** (NUMERIC):
+    ├── Business Meaning: Grounded into double plays in the postseason
+    └── Value Profile:
+       ├── Cardinality: 6 (unique GIDP counts)
+       ├─── Value Distribution: Range from 0 to 5, highly skewed
+       └─── Null%: 0%
+
+**Table: els_teamnames**: Information on team names and their respective parks.
+
+- **Columns (Exact Names):**
+  - **`id`** (NUMERIC):
+    ├── Business Meaning: Unique identifier for each team entry
+    └── Value Profile:
+       ├── Cardinality: 314 (unique entries)
+       ├─── Value Distribution: Evenly distributed
+       └─── Null%: 0%
+
+  - **`lgid`** (CATEGORICAL):
+    ├── Business Meaning: League identifier
+    └── Value Profile:
+       ├── Cardinality: 7 (unique leagues)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`teamid`** (TEXT):
+    ├── Business Meaning: Unique identifier for each team
+    └── Value Profile:
+       ├── Cardinality: 149 (unique teams)
+       ├─── Value Distribution: Diverse team representation
+       └─── Null%: 0%
+
+  - **`franchid`** (TEXT):
+    ├── Business Meaning: Unique identifier for each franchise
+    └── Value Profile:
+       ├── Cardinality: 120 (unique franchises)
+       ├─── Value Distribution: Diverse franchise representation
+       └─── Null%: 0%
+
+  - **`name`** (TEXT):
+    ├── Business Meaning: Name of the team
+    └── Value Profile:
+       ├── Cardinality: 139 (unique team names)
+       ├─── Value Distribution: Diverse team names
+       └─── Null%: 0%
+
+  - **`park`** (TEXT):
+    ├── Business Meaning: Name of the park where the team plays
+    └── Value Profile:
+       ├── Cardinality: 212 (unique parks)
+       ├─── Value Distribution: Diverse park representation
+       └─── Null%: 0%
+
+**Table: fielding**: Player fielding statistics across various seasons.
+
+- **Columns (Exact Names):**
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 14196 (unique players)
+       ├─── Value Distribution: Diverse player representation
+       └─── Null%: 0%
+
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of the fielding statistics
+    └── Value Profile:
+       ├── Cardinality: 142 (years)
+       ├─── Value Distribution: Range from 1871 to 2012, slightly negatively skewed
+       └─── Null%: 0%
+
+  - **`stint`** (CATEGORICAL):
+    ├── Business Meaning: Stint of the player in the season
+    └── Value Profile:
+       ├── Cardinality: 5 (unique stints)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`teamID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each team
+    └── Value Profile:
+       ├── Cardinality: 149 (unique teams)
+       ├─── Value Distribution: Diverse team representation
+       └─── Null%: 0%
+
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: League identifier
+    └── Value Profile:
+       ├── Cardinality: 7 (unique leagues)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`POS`** (CATEGORICAL):
+    ├── Business Meaning: Position played by the player
+    └── Value Profile:
+       ├── Cardinality: 11 (unique positions)
+       ├─── Value Distribution: Diverse position representation
+       └─── Null%: 0%
+
+  - **`G`** (NUMERIC):
+    ├── Business Meaning: Games played by the player
+    └── Value Profile:
+       ├── Cardinality: 166 (unique game counts)
+       ├─── Value Distribution: Range from 0 to 165, moderately skewed
+       └─── Null%: 0%
+
+  - **`GS`** (NUMERIC):
+    ├── Business Meaning: Games started by the player
+    └── Value Profile:
+       ├── Cardinality: 165 (unique game start counts)
+       ├─── Value Distribution: Range from 0 to 164, moderately skewed
+       └─── Null%: 0%
+
+  - **`InnOuts`** (NUMERIC):
+    ├── Business Meaning: Innings played by the player
+    └── Value Profile:
+       ├── Cardinality: 4300 (unique inning counts)
+       ├─── Value Distribution: Range from 0 to 4469, highly skewed
+       └─── Null%: 0%
+
+  - **`PO`** (NUMERIC):
+    ├── Business Meaning: Putouts made by the player
+    └── Value Profile:
+       ├── Cardinality: 1512 (unique putout counts)
+       ├─── Value Distribution: Range from 0 to 1846, highly skewed
+       └─── Null%: 0%
+
+  - **`A`** (NUMERIC):
+    ├── Business Meaning: Assists made by the player
+    └── Value Profile:
+       ├── Cardinality: 577 (unique assist counts)
+       ├─── Value Distribution: Range from 0 to 641, highly skewed
+       └─── Null%: 0%
+
+  - **`E`** (NUMERIC):
+    ├── Business Meaning: Errors made by the player
+    └── Value Profile:
+       ├── Cardinality: 107 (unique error counts)
+       ├─── Value Distribution: Range from 0 to 119, highly skewed
+       └─── Null%: 0%
+
+  - **`DP`** (NUMERIC):
+    ├── Business Meaning: Double plays made by the player
+    └── Value Profile:
+       ├── Cardinality: 168 (unique double play counts)
+       ├─── Value Distribution: Range from 0 to 194, highly skewed
+       └─── Null%: 0%
+
+  - **`PB`** (NUMERIC):
+    ├── Business Meaning: Passed balls by the player
+    └── Value Profile:
+       ├── Cardinality: 86 (unique passed ball counts)
+       ├─── Value Distribution: Range from 0 to 105, highly skewed
+       └─── Null%: 0%
+
+  - **`WP`** (NUMERIC):
+    ├── Business Meaning: Wild pitches by the player
+    └── Value Profile:
+       ├── Cardinality: 62 (unique wild pitch counts)
+       ├─── Value Distribution: Range from 0 to 69, moderately skewed
+       └─── Null%: 0%
+
+  - **`SB`** (NUMERIC):
+    ├── Business Meaning: Stolen bases by the player
+    └── Value Profile:
+       ├── Cardinality: 131 (unique stolen base counts)
+       ├─── Value Distribution: Range from 0 to 155, moderately skewed
+       └─── Null%: 0%
+
+  - **`CS`** (NUMERIC):
+    ├── Business Meaning: Caught stealing by the player
+    └── Value Profile:
+       ├── Cardinality: 69 (unique caught stealing counts)
+       ├─── Value Distribution: Range from 0 to 70, moderately skewed
+       └─── Null%: 0%
+
+  - **`ZR`** (NUMERIC):
+    ├── Business Meaning: Zone rating of the player
+    └── Value Profile:
+       ├── Cardinality: 13 (unique zone rating counts)
+       ├─── Value Distribution: Range from 0 to 15, highly skewed
+       └─── Null%: 0%
+
+**Table: fieldingof**: Player fielding statistics over various years.
+
+- **Columns (Exact Names):**
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 3512 unique values
+       ├─── Value Distribution: Not unique, represents player identifiers
+       └─── Null%: 0.00%
+  
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of the fielding statistics
+    └── Value Profile:
+       ├── Cardinality: 85 unique values
+       ├─── Value Distribution: Not unique, represents years from 1871 to 1955, mean: 1912.74
+       └─── Null%: 0.00%
+
+  - **`stint`** (CATEGORICAL):
+    ├── Business Meaning: Indicates player stints
+    └── Value Profile:
+       ├── Cardinality: 5 unique values
+       ├─── Value Distribution: Not unique
+       └─── Null%: 0.00%
+
+  - **`Glf`** (NUMERIC):
+    ├── Business Meaning: Fielding statistic
+    └── Value Profile:
+       ├── Cardinality: 157 unique values
+       ├─── Value Distribution: Not unique, mean: 15.74, high skewness
+       └─── Null%: 0.31%
+
+  - **`Gcf`** (NUMERIC):
+    ├── Business Meaning: Fielding statistic
+    └── Value Profile:
+       ├── Cardinality: 159 unique values
+       ├─── Value Distribution: Not unique, similar characteristics as Glf
+       └─── Null%: 0.31%
+
+  - **`Grf`** (NUMERIC):
+    ├── Business Meaning: Fielding statistic
+    └── Value Profile:
+       ├── Cardinality: 159 unique values
+       ├─── Value Distribution: Not unique, similar characteristics as Glf and Gcf
+       └─── Null%: 0.36%
+
+**Table: fieldingpost**: Player fielding performance in postseason games.
+
+- **Columns (Exact Names):**
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 3160 unique values
+       ├─── Value Distribution: Not unique, represents player identifiers
+       └─── Null%: 0.00%
+
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of the postseason statistics
+    └── Value Profile:
+       ├── Cardinality: 108 unique values
+       ├─── Value Distribution: Not unique, represents years from 1903 to 2012, mean: 1981.50
+       └─── Null%: 0.00%
+
+  - **`teamID`** (CATEGORICAL):
+    ├── Business Meaning: Unique identifier for each team
+    └── Value Profile:
+       ├── Cardinality: 41 unique values
+       ├─── Value Distribution: Not unique, represents team identifiers
+       └─── Null%: 0.00%
+
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: League identifier
+    └── Value Profile:
+       ├── Cardinality: 2 unique values
+       ├─── Value Distribution: Not unique, indicates league identifiers
+       └─── Null%: 0.00%
+
+  - **`round`** (CATEGORICAL):
+    ├── Business Meaning: Indicates playoff rounds
+    └── Value Profile:
+       ├── Cardinality: 13 unique values
+       ├─── Value Distribution: Not unique
+       └─── Null%: 0.00%
+
+  - **`POS`** (CATEGORICAL):
+    ├── Business Meaning: Player position
+    └── Value Profile:
+       ├── Cardinality: 11 unique values
+       ├─── Value Distribution: Not unique
+       └─── Null%: 0.00%
+
+  - **`G`** (NUMERIC):
+    ├── Business Meaning: Games played
+    └── Value Profile:
+       ├── Cardinality: 9 unique values
+       ├─── Value Distribution: Not unique, mean: 3.01
+       └─── Null%: 0.00%
+
+  - **`GS`** (NUMERIC):
+    ├── Business Meaning: Games started
+    └── Value Profile:
+       ├── Cardinality: 9 unique values
+       ├─── Value Distribution: Not unique, mean: 2.25
+       └─── Null%: 0.00%
+
+  - **`InnOuts`** (NUMERIC):
+    ├── Business Meaning: Innings played
+    └── Value Profile:
+       ├── Cardinality: 210 unique values
+       ├─── Value Distribution: Not unique, mean: 60.46
+       └─── Null%: 1.55%
+
+  - **`PO`** (NUMERIC):
+    ├── Business Meaning: Putouts
+    └── Value Profile:
+       ├── Cardinality: 83 unique values
+       ├─── Value Distribution: Not unique, mean: 6.71
+       └─── Null%: 0.00%
+
+  - **`A`** (NUMERIC):
+    ├── Business Meaning: Assists
+    └── Value Profile:
+       ├── Cardinality: 34 unique values
+       ├─── Value Distribution: Not unique, mean: 2.61
+       └─── Null%: 0.00%
+
+  - **`E`** (NUMERIC):
+    ├── Business Meaning: Errors
+    └── Value Profile:
+       ├── Cardinality: 8 unique values
+       ├─── Value Distribution: Not unique, mean: 0.21
+       └─── Null%: 0.00%
+
+  - **`DP`** (NUMERIC):
+    ├── Business Meaning: Double plays
+    └── Value Profile:
+       ├── Cardinality: 13 unique values
+       ├─── Value Distribution: Not unique, mean: 0.56
+       └─── Null%: 0.00%
+
+  - **`TP`** (CATEGORICAL):
+    ├── Business Meaning: Triple plays
+    └── Value Profile:
+       ├── Cardinality: 2 unique values
+       ├─── Value Distribution: Not unique
+       └─── Null%: 0.00%
+
+  - **`PB`** (CATEGORICAL):
+    ├── Business Meaning: Passed balls
+    └── Value Profile:
+       ├── Cardinality: 4 unique values
+       ├─── Value Distribution: Not unique
+       └─── Null%: 6.00%
+
+  - **`SB`** (NUMERIC):
+    ├── Business Meaning: Stolen bases
+    └── Value Profile:
+       ├── Cardinality: 15 unique values
+       ├─── Value Distribution: Not unique, mean: 0.60
+       └─── Null%: 0.00%
+
+  - **`CS`** (NUMERIC):
+    ├── Business Meaning: Caught stealing
+    └── Value Profile:
+       ├── Cardinality: 10 unique values
+       ├─── Value Distribution: Not unique, mean: 0.34
+       └─── Null%: 0.00%
+
+**Table: halloffame**: Hall of Fame voting results for players.
+
+- **Columns (Exact Names):**
+  - **`hofID`** (TEXT):
+    ├── Business Meaning: Unique identifier for Hall of Fame entries
+    └── Value Profile:
+       ├── Cardinality: 1186 unique values
+       ├─── Value Distribution: Not unique, represents Hall of Fame identifiers
+       └─── Null%: 0.00%
+
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of voting
+    └── Value Profile:
+       ├── Cardinality: 75 unique values
+       ├─── Value Distribution: Not unique, represents years from 1936 to 2013, mean: 1968.13
+       └─── Null%: 0.00%
+
+  - **`votedBy`** (CATEGORICAL):
+    ├── Business Meaning: Voting body
+    └── Value Profile:
+       ├── Cardinality: 9 unique values
+       ├─── Value Distribution: Not unique, indicates voting bodies
+       └─── Null%: 0.00%
+
+  - **`ballots`** (NUMERIC):
+    ├── Business Meaning: Total ballots cast
+    └── Value Profile:
+       ├── Cardinality: 69 unique values
+       ├─── Value Distribution: Not unique, mean: 317.85
+       └─── Null%: 4.35%
+
+  - **`needed`** (NUMERIC):
+    ├── Business Meaning: Votes needed for induction
+    └── Value Profile:
+       ├── Cardinality: 60 unique values
+       ├─── Value Distribution: Not unique, mean: 240.64
+       └─── Null%: 6.45%
+
+  - **`votes`** (NUMERIC):
+    ├── Business Meaning: Total votes received
+    └── Value Profile:
+       ├── Cardinality: 344 unique values
+       ├─── Value Distribution: Not unique, mean: 49.30
+       └─── Null%: 0.00%
+
+  - **`inducted`** (BOOLEAN):
+    ├── Business Meaning: Induction status
+    └── Value Profile:
+       ├── Cardinality: 2 unique values
+       ├─── Value Distribution: Not unique, indicates induction status
+       └─── Null%: 0.00%
+
+  - **`category`** (CATEGORICAL):
+    ├── Business Meaning: Category of induction
+    └── Value Profile:
+       ├── Cardinality: 4 unique values
+       ├─── Value Distribution: Not unique, indicates categories of induction
+       └─── Null%: 0.00%
+
+**Table: managers**: Managerial statistics over various years.
+
+- **Columns (Exact Names):**
+  - **`managerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each manager
+    └── Value Profile:
+       ├── Cardinality: 676 unique values
+       ├─── Value Distribution: Not unique, represents manager identifiers
+       └─── Null%: 0.00%
+
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of managerial statistics
+    └── Value Profile:
+       ├── Cardinality: 142 unique values
+       ├─── Value Distribution: Not unique, represents years from 1871 to 2012, mean: 1952.09
+       └─── Null%: 0.00%
+
+  - **`teamID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each team
+    └── Value Profile:
+       ├── Cardinality: 148 unique values
+       ├─── Value Distribution: Not unique, represents team identifiers
+       └─── Null%: 0.00%
+
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: League identifier
+    └── Value Profile:
+       ├── Cardinality: 7 unique values
+       ├─── Value Distribution: Not unique, indicates league identifiers
+       └─── Null%: 0.00%
+
+  - **`inseason`** (NUMERIC):
+    ├── Business Meaning: In-season status
+    └── Value Profile:
+       ├── Cardinality: 9 unique values
+       ├─── Value Distribution: Not unique, mean: 1.24
+       └─── Null%: 0.00%
+
+  - **`G`** (NUMERIC):
+    ├── Business Meaning: Games managed
+    └── Value Profile:
+       ├── Cardinality: 165 unique values
+       ├─── Value Distribution: Not unique, mean: 123.35
+       └─── Null%: 0.00%
+
+  - **`W`** (NUMERIC):
+    ├── Business Meaning: Wins
+    └── Value Profile:
+       ├── Cardinality: 114 unique values
+       ├─── Value Distribution: Not unique, mean: 61.35
+       └─── Null%: 0.00%
+
+  - **`L`** (NUMERIC):
+    ├── Business Meaning: Losses
+    └── Value Profile:
+       ├── Cardinality: 118 unique values
+       ├─── Value Distribution: Not unique, mean: 61.27
+       └─── Null%: 0.00%
+
+  - **`rank`** (NUMERIC):
+    ├── Business Meaning: Managerial rank
+    └── Value Profile:
+       ├── Cardinality: 12 unique values
+       ├─── Value Distribution: Not unique, mean: 4.37
+       └─── Null%: 0.00%
+
+  - **`plyrMgr`** (BOOLEAN):
+    ├── Business Meaning: Indicates player-manager status
+    └── Value Profile:
+       ├── Cardinality: 2 unique values
+       ├─── Value Distribution: Not unique
+       └─── Null%: 0.00%
+
+**Table: managershalf**: Managerial statistics split by half-season.
+
+- **Columns (Exact Names):**
+  - **`managerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each manager
+    └── Value Profile:
+       ├── Cardinality: 51 unique values
+       ├─── Value Distribution: Not unique, represents manager identifiers
+       └─── Null%: 0.00%
+
+  - **`yearID`** (CATEGORICAL):
+    ├── Business Meaning: Year of managerial statistics
+    └── Value Profile:
+       ├── Cardinality: 2 unique values
+       ├─── Value Distribution: Not unique
+       └─── Null%: 0.00%
+
+  - **`teamID`** (CATEGORICAL):
+    ├── Business Meaning: Unique identifier for each team
+    └── Value Profile:
+       ├── Cardinality: 32 unique values
+       ├─── Value Distribution: Not unique, represents team identifiers
+       └─── Null%: 0.00%
+
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: League identifier
+    └── Value Profile:
+       ├── Cardinality: 2 unique values
+       ├─── Value Distribution: Not unique, indicates league identifiers
+       └─── Null%: 0.00%
+
+  - **`inseason`** (CATEGORICAL):
+    ├── Business Meaning: In-season status
+    └── Value Profile:
+       ├── Cardinality: 5 unique values
+       ├─── Value Distribution: Not unique
+       └─── Null%: 0.00%
+
+  - **`half`** (CATEGORICAL):
+    ├── Business Meaning: Half-season status
+    └── Value Profile:
+       ├── Cardinality: 2 unique values
+       ├─── Value Distribution: Not unique
+       └─── Null%: 0.00%
+
+  - **`G`** (NUMERIC):
+    ├── Business Meaning: Games managed
+    └── Value Profile:
+       ├── Cardinality: 37 unique values
+       ├─── Value Distribution: Not unique, mean: 50.30
+       └─── Null%: 0.00%
+
+  - **`W`** (NUMERIC):
+    ├── Business Meaning: Wins
+    └── Value Profile:
+       ├── Cardinality: 40 unique values
+       ├─── Value Distribution: Not unique, mean: 25.10
+       └─── Null%: 0.00%
+
+  - **`L`** (NUMERIC):
+    ├── Business Meaning: Losses
+    └── Value Profile:
+       ├── Cardinality: 33 unique values
+       ├─── Value Distribution: Not unique, mean: 24.71
+       └─── Null%: 0.00%
+
+  - **`rank`** (NUMERIC):
+    ├── Business Meaning: Managerial rank
+    └── Value Profile:
+       ├── Cardinality: 12 unique values
+       ├─── Value Distribution: Not unique, mean: 4.97
+       └─── Null%: 0.00%
+
+**Table: pitching**: Data related to player pitching performance in various seasons.
+
+- **Columns (Exact Names):**
+  - **`playerID`** (Text):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 7797 (unique players)
+       ├─── Value Distribution: Not unique, diverse player IDs.
+       └─── Null%: 0.0%
+  
+  - **`yearID`** (Numeric):
+    ├── Business Meaning: Year of the pitching performance
+    └── Value Profile:
+       ├── Cardinality: 142 (unique years)
+       ├─── Value Distribution: Range from 1871 to 2012, mean of 1962.47.
+       └─── Null%: 0.0%
+
+  - **`stint`** (Categorical):
+    ├── Business Meaning: Indicates the stint of the player in the season
+    └── Value Profile:
+       ├── Cardinality: 4 (unique stints)
+       ├─── Value Distribution: Limited distinct values indicating few stints.
+       └─── Null%: 0.0%
+
+  - **`teamID`** (Text):
+    ├── Business Meaning: Team identifier for the player
+    └── Value Profile:
+       ├── Cardinality: 149 (unique teams)
+       ├─── Value Distribution: Diverse team representation.
+       └─── Null%: 0.0%
+
+  - **`lgID`** (Categorical):
+    ├── Business Meaning: League identifier for the player
+    └── Value Profile:
+       ├── Cardinality: 7 (unique leagues)
+       ├─── Value Distribution: Represents different leagues.
+       └─── Null%: 0.0%
+
+  - **`W`** (Numeric):
+    ├── Business Meaning: Number of wins by the player
+    └── Value Profile:
+       ├── Cardinality: 54 (unique win counts)
+       ├─── Value Distribution: Range from 0 to 59, mean of 4.96.
+       └─── Null%: 0.0%
+
+  - **`L`** (Numeric):
+    ├── Business Meaning: Number of losses by the player
+    └── Value Profile:
+       ├── Cardinality: 43 (unique loss counts)
+       ├─── Value Distribution: Range from 0 to 48, mean of 4.96.
+       └─── Null%: 0.0%
+
+  - **`G`** (Numeric):
+    ├── Business Meaning: Total games played by the player
+    └── Value Profile:
+       ├── Cardinality: 94 (unique game counts)
+       ├─── Value Distribution: Range from 1 to 106, mean of 23.60.
+       └─── Null%: 0.0%
+
+  - **`GS`** (Numeric):
+    ├── Business Meaning: Games started by the player
+    └── Value Profile:
+       ├── Cardinality: 75 (unique game starts)
+       ├─── Value Distribution: Range from 0 to 75, mean of 9.98.
+       └─── Null%: 0.0%
+
+  - **`CG`** (Numeric):
+    ├── Business Meaning: Complete games pitched by the player
+    └── Value Profile:
+       ├── Cardinality: 74 (unique complete games)
+       ├─── Value Distribution: Range from 0 to 75, mean of 3.58.
+       └─── Null%: 0.0%
+
+  - **`SHO`** (Numeric):
+    ├── Business Meaning: Shutouts pitched by the player
+    └── Value Profile:
+       ├── Cardinality: 15 (unique shutouts)
+       ├─── Value Distribution: Range from 0 to 16, mean of 0.50.
+       └─── Null%: 0.0%
+
+  - **`SV`** (Numeric):
+    ├── Business Meaning: Saves made by the player
+    └── Value Profile:
+       ├── Cardinality: 57 (unique saves)
+       ├─── Value Distribution: Range from 0 to 62, mean of 1.53.
+       └─── Null%: 0.0%
+
+  - **`IPouts`** (Numeric):
+    ├── Business Meaning: Innings pitched in outs
+    └── Value Profile:
+       ├── Cardinality: 1313 (unique innings)
+       ├─── Value Distribution: Range from 0 to 2040, mean of 266.91.
+       └─── Null%: 0.0%
+
+  - **`H`** (Numeric):
+    ├── Business Meaning: Hits allowed by the player
+    └── Value Profile:
+       ├── Cardinality: 533 (unique hits)
+       ├─── Value Distribution: Range from 0 to 772, mean of 89.48.
+       └─── Null%: 0.0%
+
+  - **`ER`** (Numeric):
+    ├── Business Meaning: Earned runs allowed by the player
+    └── Value Profile:
+       ├── Cardinality: 216 (unique earned runs)
+       ├─── Value Distribution: Range from 0 to 291, mean of 37.77.
+       └─── Null%: 0.0%
+
+  - **`HR`** (Numeric):
+    ├── Business Meaning: Home runs allowed by the player
+    └── Value Profile:
+       ├── Cardinality: 48 (unique home runs)
+       ├─── Value Distribution: Range from 0 to 50, mean of 6.49.
+       └─── Null%: 0.0%
+
+  - **`BB`** (Numeric):
+    ├── Business Meaning: Walks allowed by the player
+    └── Value Profile:
+       ├── Cardinality: 210 (unique walks)
+       ├─── Value Distribution: Range from 0 to 289, mean of 31.45.
+       └─── Null%: 0.0%
+
+  - **`SO`** (Numeric):
+    ├── Business Meaning: Strikeouts made by the player
+    └── Value Profile:
+       ├── Cardinality: 338 (unique strikeouts)
+       ├─── Value Distribution: Range from 0 to 513, mean of 46.69.
+       └─── Null%: 0.0%
+
+  - **`BAOpp`** (Categorical):
+    ├── Business Meaning: Batting average against the player
+    └── Value Profile:
+       ├── Cardinality: 3 (unique batting averages)
+       ├─── Value Distribution: Limited distinct values indicating few batting averages against.
+       └─── Null%: 0.0%
+
+  - **`ERA`** (Numeric):
+    ├── Business Meaning: Earned run average of the player
+    └── Value Profile:
+       ├── Cardinality: 52 (unique earned run averages)
+       ├─── Value Distribution: Range from 0.0 to 189.0, mean of 4.59.
+       └─── Null%: 0.0%
+
+  - **`IBB`** (Numeric):
+    ├── Business Meaning: Intentional walks allowed by the player
+    └── Value Profile:
+       ├── Cardinality: 22 (unique intentional walks)
+       ├─── Value Distribution: Range from 0 to 23, mean of 2.65.
+       └─── Null%: 0.0%
+
+  - **`WP`** (Numeric):
+    ├── Business Meaning: Wild pitches made by the player
+    └── Value Profile:
+       ├── Cardinality: 52 (unique wild pitches)
+       ├─── Value Distribution: Range from 0 to 63, mean of 2.58.
+       └─── Null%: 0.0%
+
+  - **`HBP`** (Numeric):
+    ├── Business Meaning: Hit by pitch allowed by the player
+    └── Value Profile:
+       ├── Cardinality: 34 (unique hit by pitches)
+       ├─── Value Distribution: Range from 0 to 41, mean of 2.30.
+       └─── Null%: 0.0%
+
+  - **`BK`** (Numeric):
+    ├── Business Meaning: Balks made by the player
+    └── Value Profile:
+       ├── Cardinality: 16 (unique balks)
+       ├─── Value Distribution: Range from 0 to 16, mean of 0.32.
+       └─── Null%: 0.0%
+
+  - **`BFP`** (Numeric):
+    ├── Business Meaning: Batters faced by the player
+    └── Value Profile:
+       ├── Cardinality: 1636 (unique batters faced)
+       ├─── Value Distribution: Range from 0 to 2906, mean of 359.43.
+       └─── Null%: 0.0%
+
+  - **`GF`** (Numeric):
+    ├── Business Meaning: Games finished by the player
+    └── Value Profile:
+       ├── Cardinality: 78 (unique games finished)
+       ├─── Value Distribution: Range from 0 to 84, mean of 6.43.
+       └─── Null%: 0.0%
+
+  - **`R`** (Numeric):
+    ├── Business Meaning: Runs allowed by the player
+    └── Value Profile:
+       ├── Cardinality: 345 (unique runs)
+       ├─── Value Distribution: Range from 0 to 519, mean of 45.38.
+       └─── Null%: 0.0%
+
+  - **`SH`** (Unsupported):
+    ├── Business Meaning: Not applicable
+    └── Value Profile:
+       ├── Cardinality: 0 (no data)
+       └─── Null%: 0.0%
+
+  - **`SF`** (Unsupported):
+    ├── Business Meaning: Not applicable
+    └── Value Profile:
+       ├── Cardinality: 0 (no data)
+       └─── Null%: 0.0%
+
+  - **`GIDP`** (Unsupported):
+    ├── Business Meaning: Not applicable
+    └── Value Profile:
+       ├── Cardinality: 0 (no data)
+       └─── Null%: 0.0%
+
+  - **`pitching_avg`** (Numeric):
+    ├── Business Meaning: Average pitching performance
+    └── Value Profile:
+       ├── Cardinality: 4802 (unique averages)
+       ├─── Value Distribution: Range from 0.0 to 15.0, mean of 1.88.
+       └─── Null%: 0.0%
+
+**Table: pitchingpost**: Data related to player pitching performance in postseason games.
+
+- **Columns (Exact Names):**
+  - **`playerID`** (Text):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 1384 (unique players)
+       ├─── Value Distribution: Diverse player IDs.
+       └─── Null%: 0.0%
+
+  - **`yearID`** (Numeric):
+    ├── Business Meaning: Year of the postseason performance
+    └── Value Profile:
+       ├── Cardinality: 116 (unique years)
+       ├─── Value Distribution: Range from 1884 to 2012, mean of 1982.23.
+       └─── Null%: 0.0%
+
+  - **`round`** (Categorical):
+    ├── Business Meaning: Round of the postseason
+    └── Value Profile:
+       ├── Cardinality: 14 (unique rounds)
+       ├─── Value Distribution: Limited distinct values indicating few rounds.
+       └─── Null%: 0.0%
+
+  - **`teamID`** (Categorical):
+    ├── Business Meaning: Team identifier for the player
+    └── Value Profile:
+       ├── Cardinality: 48 (unique teams)
+       ├─── Value Distribution: Diverse team representation.
+       └─── Null%: 0.0%
+
+  - **`lgID`** (Categorical):
+    ├── Business Meaning: League identifier for the player
+    └── Value Profile:
+       ├── Cardinality: 3 (unique leagues)
+       ├─── Value Distribution: Represents different leagues.
+       └─── Null%: 0.0%
+
+  - **`W`** (Categorical):
+    ├── Business Meaning: Number of wins in postseason
+    └── Value Profile:
+       ├── Cardinality: 5 (unique win counts)
+       ├─── Value Distribution: Limited distinct values indicating few wins.
+       └─── Null%: 0.0%
+
+  - **`L`** (Categorical):
+    ├── Business Meaning: Number of losses in postseason
+    └── Value Profile:
+       ├── Cardinality: 5 (unique loss counts)
+       ├─── Value Distribution: Limited distinct values indicating few losses.
+       └─── Null%: 0.0%
+
+  - **`G`** (Numeric):
+    ├── Business Meaning: Total games played in postseason
+    └── Value Profile:
+       ├── Cardinality: 8 (unique game counts)
+       ├─── Value Distribution: Range from 1 to 8, mean of 1.90.
+       └─── Null%: 0.0%
+
+  - **`GS`** (Numeric):
+    ├── Business Meaning: Games started in postseason
+    └── Value Profile:
+       ├── Cardinality: 8 (unique game starts)
+       ├─── Value Distribution: Range from 0 to 8, mean of 0.64.
+       └─── Null%: 0.0%
+
+  - **`CG`** (Numeric):
+    ├── Business Meaning: Complete games pitched in postseason
+    └── Value Profile:
+       ├── Cardinality: 8 (unique complete games)
+       ├─── Value Distribution: Range from 0 to 8, mean of 0.15.
+       └─── Null%: 0.0%
+
+  - **`SHO`** (Categorical):
+    ├── Business Meaning: Shutouts pitched in postseason
+    └── Value Profile:
+       ├── Cardinality: 4 (unique shutouts)
+       ├─── Value Distribution: Limited distinct values indicating few shutouts.
+       └─── Null%: 0.0%
+
+  - **`SV`** (Categorical):
+    ├── Business Meaning: Saves made in postseason
+    └── Value Profile:
+       ├── Cardinality: 5 (unique saves)
+       ├─── Value Distribution: Limited distinct values indicating few saves.
+       └─── Null%: 0.0%
+
+  - **`IPouts`** (Numeric):
+    ├── Business Meaning: Innings pitched in postseason
+    └── Value Profile:
+       ├── Cardinality: 90 (unique innings)
+       ├─── Value Distribution: Range from 0 to 213, mean of 17.14.
+       └─── Null%: 0.0%
+
+  - **`H`** (Numeric):
+    ├── Business Meaning: Hits allowed in postseason
+    └── Value Profile:
+       ├── Cardinality: 39 (unique hits)
+       ├─── Value Distribution: Range from 0 to 64, mean of 5.25.
+       └─── Null%: 0.0%
+
+  - **`ER`** (Numeric):
+    ├── Business Meaning: Earned runs allowed in postseason
+    └── Value Profile:
+       ├── Cardinality: 20 (unique earned runs)
+       ├─── Value Distribution: Range from 0 to 26, mean of 2.22.
+       └─── Null%: 0.0%
+
+  - **`HR`** (Numeric):
+    ├── Business Meaning: Home runs allowed in postseason
+    └── Value Profile:
+       ├── Cardinality: 6 (unique home runs)
+       ├─── Value Distribution: Range from 0 to 5, mean of 0.52.
+       └─── Null%: 0.0%
+
+  - **`BB`** (Numeric):
+    ├── Business Meaning: Walks allowed in postseason
+    └── Value Profile:
+       ├── Cardinality: 19 (unique walks)
+       ├─── Value Distribution: Range from 0 to 32, mean of 2.04.
+       └─── Null%: 0.0%
+
+  - **`SO`** (Numeric):
+    ├── Business Meaning: Strikeouts made in postseason
+    └── Value Profile:
+       ├── Cardinality: 31 (unique strikeouts)
+       ├─── Value Distribution: Range from 0 to 35, mean of 3.90.
+       └─── Null%: 0.0%
+
+  - **`BAOpp`** (Categorical):
+    ├── Business Meaning: Batting average against in postseason
+    └── Value Profile:
+       ├── Cardinality: 2 (unique batting averages)
+       ├─── Value Distribution: Limited distinct values indicating few batting averages against.
+       └─── Null%: 0.0%
+
+  - **`ERA`** (Numeric):
+    ├── Business Meaning: Earned run average in postseason
+    └── Value Profile:
+       ├── Cardinality: 35 (unique earned run averages)
+       ├─── Value Distribution: Range from 0.0 to 108.0, mean of 4.36.
+       └─── Null%: 0.0%
+
+  - **`IBB`** (Categorical):
+    ├── Business Meaning: Intentional walks allowed in postseason
+    └── Value Profile:
+       ├── Cardinality: 5 (unique intentional walks)
+       ├─── Value Distribution: Limited distinct values indicating few intentional walks.
+       └─── Null%: 0.0%
+
+  - **`WP`** (Numeric):
+    ├── Business Meaning: Wild pitches made in postseason
+    └── Value Profile:
+       ├── Cardinality: 6 (unique wild pitches)
+       ├─── Value Distribution: Range from 0 to 5, mean of 0.15.
+       └─── Null%: 0.0%
+
+  - **`HBP`** (Categorical):
+    ├── Business Meaning: Hit by pitch allowed in postseason
+    └── Value Profile:
+       ├── Cardinality: 4 (unique hit by pitches)
+       ├─── Value Distribution: Limited distinct values indicating few hit by pitches.
+       └─── Null%: 0.0%
+
+  - **`BK`** (Categorical):
+    ├── Business Meaning: Balks made in postseason
+    └── Value Profile:
+       ├── Cardinality: 2 (unique balks)
+       ├─── Value Distribution: Limited distinct values indicating few balks.
+       └─── Null%: 0.0%
+
+  - **`BFP`** (Numeric):
+    ├── Business Meaning: Batters faced in postseason
+    └── Value Profile:
+       ├── Cardinality: 108 (unique batters faced)
+       ├─── Value Distribution: Range from 1 to 178, mean of 23.33.
+       └─── Null%: 0.0%
+
+  - **`GF`** (Numeric):
+    ├── Business Meaning: Games finished in postseason
+    └── Value Profile:
+       ├── Cardinality: 7 (unique games finished)
+       ├─── Value Distribution: Range from 0 to 6, mean of 0.48.
+       └─── Null%: 0.0%
+
+  - **`R`** (Numeric):
+    ├── Business Meaning: Runs allowed in postseason
+    └── Value Profile:
+       ├── Cardinality: 28 (unique runs)
+       ├─── Value Distribution: Range from 0 to 36, mean of 2.56.
+       └─── Null%: 0.0%
+
+  - **`SH`** (Numeric):
+    ├── Business Meaning: Sacrifice hits in postseason
+    └── Value Profile:
+       ├── Cardinality: 8 (unique sacrifice hits)
+       ├─── Value Distribution: Range from 0 to 7, mean of 0.31.
+       └─── Null%: 0.0%
+
+  - **`SF`** (Categorical):
+    ├── Business Meaning: Sacrifice flies in postseason
+    └── Value Profile:
+       ├── Cardinality: 5 (unique sacrifice flies)
+       ├─── Value Distribution: Limited distinct values indicating few sacrifice flies.
+       └─── Null%: 0.0%
+
+  - **`GIDP`** (Numeric):
+    ├── Business Meaning: Grounded into double plays in postseason
+    └── Value Profile:
+       ├── Cardinality: 7 (unique double plays)
+       ├─── Value Distribution: Range from 0 to 6, mean of 0.40.
+       └─── Null%: 0.0%
+
+**Table: players**: Data related to player information and demographics.
+
+- **Columns (Exact Names):**
+  - **`lahmanID`** (Numeric):
+    ├── Business Meaning: Unique identifier for each player in the Lahman database
+    └── Value Profile:
+       ├── Cardinality: 16407 (unique players)
+       ├─── Value Distribution: Diverse player IDs.
+       └─── Null%: 0.0%
+
+  - **`playerID`** (Text):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 16406 (unique players)
+       ├─── Value Distribution: Not unique, diverse player IDs.
+       └─── Null%: 0.0%
+
+  - **`managerID`** (Text):
+    ├── Business Meaning: Unique identifier for each manager
+    └── Value Profile:
+       ├── Cardinality: 557 (unique managers)
+       ├─── Value Distribution: Diverse manager representation.
+       └─── Null%: 0.0%
+
+  - **`hofID`** (Text):
+    ├── Business Meaning: Unique identifier for Hall of Fame players
+    └── Value Profile:
+       ├── Cardinality: 1120 (unique Hall of Fame IDs)
+       ├─── Value Distribution: Hall of Fame IDs are diverse.
+       └─── Null%: 0.0%
+
+  - **`birthYear`** (Numeric):
+    ├── Business Meaning: Year of birth of the player
+    └── Value Profile:
+       ├── Cardinality: 151 (unique birth years)
+       ├─── Value Distribution: Range from 1831 to 1986, mean of 1936.06.
+       └─── Null%: 0.0%
+
+  - **`birthMonth`** (Numeric):
+    ├── Business Meaning: Month of birth of the player
+    └── Value Profile:
+       ├── Cardinality: 12 (unique birth months)
+       ├─── Value Distribution: Represents all months.
+       └─── Null%: 0.0%
+
+  - **`birthDay`** (Numeric):
+    ├── Business Meaning: Day of birth of the player
+    └── Value Profile:
+       ├── Cardinality: 31 (unique birth days)
+       ├─── Value Distribution: Represents all days.
+       └─── Null%: 0.0%
+
+  - **`birthCountry`** (Text):
+    ├── Business Meaning: Country of birth of the player
+    └── Value Profile:
+       ├── Cardinality: 53 (unique birth countries)
+       ├─── Value Distribution: Diverse birth countries.
+       └─── Null%: 0.0%
+
+  - **`birthState`** (Text):
+    ├── Business Meaning: State of birth of the player
+    └── Value Profile:
+       ├── Cardinality: 79 (unique birth states)
+       ├─── Value Distribution: Diverse birth states.
+       └─── Null%: 0.0%
+
+  - **`birthCity`** (Text):
+    ├── Business Meaning: City of birth of the player
+    └── Value Profile:
+       ├── Cardinality: 4420 (unique birth cities)
+       ├─── Value Distribution: Diverse birth cities.
+       └─── Null%: 0.0%
+
+  - **`deathYear`** (Numeric):
+    ├── Business Meaning: Year of death of the player
+    └── Value Profile:
+       ├── Cardinality: 137 (unique death years)
+       ├─── Value Distribution: Range from 1872 to 2008, mean of 1968.03.
+       └─── Null%: 0.0%
+
+  - **`deathMonth`** (Numeric):
+    ├── Business Meaning: Month of death of the player
+    └── Value Profile:
+       ├── Cardinality: 12 (unique death months)
+       ├─── Value Distribution: Represents all months.
+       └─── Null%: 0.0%
+
+  - **`deathDay`** (Numeric):
+    ├── Business Meaning: Day of death of the player
+    └── Value Profile:
+       ├── Cardinality: 31 (unique death days)
+       ├─── Value Distribution: Represents all days.
+       └─── Null%: 0.0%
+
+  - **`deathCountry`** (Categorical):
+    ├── Business Meaning: Country of death of the player
+    └── Value Profile:
+       ├── Cardinality: 26 (unique death countries)
+       ├─── Value Distribution: Diverse death countries.
+       └─── Null%: 0.0%
+
+  - **`deathState`** (Text):
+    ├── Business Meaning: State of death of the player
+    └── Value Profile:
+       ├── Cardinality: 66 (unique death states)
+       ├─── Value Distribution: Diverse death states.
+       └─── Null%: 0.0%
+
+  - **`deathCity`** (Text):
+    ├── Business Meaning: City of death of the player
+    └── Value Profile:
+       ├── Cardinality: 2343 (unique death cities)
+       ├─── Value Distribution: Diverse death cities.
+       └─── Null%: 0.0%
+
+  - **`nameFirst`** (Text):
+    ├── Business Meaning: First name of the player
+    └── Value Profile:
+       ├── Cardinality: 1967 (unique first names)
+       ├─── Value Distribution: Diverse first names.
+       └─── Null%: 0.0%
+
+  - **`nameLast`** (Text):
+    ├── Business Meaning: Last name of the player
+    └── Value Profile:
+       ├── Cardinality: 8713 (unique last names)
+       ├─── Value Distribution: Diverse last names.
+       └─── Null%: 0.0%
+
+  - **`nameNote`** (Text):
+    ├── Business Meaning: Notes related to the player's name
+    └── Value Profile:
+       ├── Cardinality: 447 (unique notes)
+       ├─── Value Distribution: Various notes on names.
+       └─── Null%: 0.0%
+
+  - **`nameGiven`** (Text):
+    ├── Business Meaning: Given name of the player
+    └── Value Profile:
+       ├── Cardinality: 10732 (unique given names)
+       ├─── Value Distribution: Diverse given names.
+       └─── Null%: 0.0%
+
+  - **`nameNick`** (Text):
+    ├── Business Meaning: Nickname of the player
+    └── Value Profile:
+       ├── Cardinality: 1773 (unique nicknames)
+       ├─── Value Distribution: Diverse nicknames.
+       └─── Null%: 0.0%
+
+  - **`weight`** (Numeric):
+    ├── Business Meaning: Weight of the player
+    └── Value Profile:
+       ├── Cardinality: 126 (unique weights)
+       ├─── Value Distribution: Range from 65 to 320, mean of 189.78.
+       └─── Null%: 0.0%
+
+  - **`height`** (Numeric):
+    ├── Business Meaning: Height of the player
+    └── Value Profile:
+       ├── Cardinality: 22 (unique heights)
+       ├─── Value Distribution: Range from 43 to 83, mean of 73.18.
+       └─── Null%: 0.0%
+
+  - **`bats`** (Categorical):
+    ├── Business Meaning: Batting style of the player
+    └── Value Profile:
+       ├── Cardinality: 3 (unique batting styles)
+       ├─── Value Distribution: Limited distinct values indicating few batting styles.
+       └─── Null%: 0.0%
+
+  - **`throws`** (Categorical):
+    ├── Business Meaning: Throwing style of the player
+    └── Value Profile:
+       ├── Cardinality: 2 (unique throwing styles)
+       ├─── Value Distribution: Limited distinct values indicating few throwing styles.
+       └─── Null%: 0.0%
+
+  - **`debut`** (DateTime):
+    ├── Business Meaning: Date of debut in professional baseball
+    └── Value Profile:
+       ├── Cardinality: 8853 (unique debut dates)
+       ├─── Value Distribution: Range from 1871-05-04 to 2005-09-28.
+       └─── Null%: 0.0%
+
+  - **`finalGame`** (DateTime):
+    ├── Business Meaning: Date of final game played
+    └── Value Profile:
+       ├── Cardinality: 8181 (unique final game dates)
+       ├─── Value Distribution: Range from 1871-05-05 to 2008-09-29.
+       └─── Null%: 0.0%
+
+**Table: salaries**: Data related to player salaries over the years.
+
+- **Columns (Exact Names):**
+  - **`yearID`** (Numeric):
+    ├── Business Meaning: Year of the salary record
+    └── Value Profile:
+       ├── Cardinality: 28 (unique years)
+       ├─── Value Distribution: Range from 1985 to 2012, mean of 1998.92.
+       └─── Null%: 0.0%
+
+  - **`teamID`** (Categorical):
+    ├── Business Meaning: Team identifier for the player
+    └── Value Profile:
+       ├── Cardinality: 35 (unique teams)
+       ├─── Value Distribution: Diverse team representation.
+       └─── Null%: 0.0%
+
+  - **`lgID`** (Categorical):
+    ├── Business Meaning: League identifier for the player
+    └── Value Profile:
+       ├── Cardinality: 2 (unique leagues)
+       ├─── Value Distribution: Represents two leagues.
+       └─── Null%: 0.0%
+
+  - **`playerID`** (Text):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 4503 (unique players)
+       ├─── Value Distribution: Diverse player representation.
+       └─── Null%: 0.0%
+
+  - **`salary`** (Numeric):
+    ├── Business Meaning: Salary of the player
+    └── Value Profile:
+       ├── Cardinality: 2872 (unique salaries)
+       ├─── Value Distribution: Range from 0 to 33,000,000, mean of 1,798,584.97.
+       └─── Null%: 0.0%
+
+**Table: schools**: Data related to educational institutions attended by players.
+
+- **Columns (Exact Names):**
+  - **`schoolID`** (Text):
+    ├── Business Meaning: Unique identifier for each school
+    └── Value Profile:
+       ├── Cardinality: 749 (unique schools)
+       ├─── Value Distribution: Unique school identifiers.
+       └─── Null%: 0.0%
+
+  - **`schoolName`** (Text):
+    ├── Business Meaning: Name of the school
+    └── Value Profile:
+       ├── Cardinality: 746 (unique school names)
+       ├─── Value Distribution: Diverse school names.
+       └─── Null%: 0.0%
+
+  - **`schoolCity`** (Text):
+    ├── Business Meaning: City where the school is located
+    └── Value Profile:
+       ├── Cardinality: 560 (unique school cities)
+       ├─── Value Distribution: Diverse school cities.
+       └─── Null%: 0.0%
+
+  - **`schoolState`** (Categorical):
+    ├── Business Meaning: State where the school is located
+    └── Value Profile:
+       ├── Cardinality: 49 (unique school states)
+       ├─── Value Distribution: Diverse school states.
+       └─── Null%: 0.0%
+
+  - **`schoolNick`** (Text):
+    ├── Business Meaning: Nickname of the school
+    └── Value Profile:
+       ├── Cardinality: 333 (unique school nicknames)
+       ├─── Value Distribution: Diverse school nicknames.
+       └─── Null%: 0.0%
+
+**Table: schoolsplayers**: Contains information about players and their associated schools over different years.
+
+- **Columns (Exact Names):**
+  - **`playerID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each player
+    └── Value Profile:
+       ├── Cardinality: 5392 (unique players)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+  
+  - **`schoolID`** (TEXT):
+    ├── Business Meaning: Identifier for the school associated with the player
+    └── Value Profile:
+       ├── Cardinality: 696 (unique schools)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`yearMin`** (NUMERIC):
+    ├── Business Meaning: The minimum year the player was associated with the school
+    └── Value Profile:
+       ├── Cardinality: 140 (unique years)
+       ├─── Value Distribution: Wide range (0-2006), highly skewed
+       └─── Null%: 0%
+
+  - **`yearMax`** (NUMERIC):
+    ├── Business Meaning: The maximum year the player was associated with the school
+    └── Value Profile:
+       ├── Cardinality: 137 (unique years)
+       ├─── Value Distribution: Wide range (0-2007), highly skewed
+       └─── Null%: 0%
+
+**Table: seriespost**: Contains results of series matches, including winning and losing teams.
+
+- **Columns (Exact Names):**
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of the series
+    └── Value Profile:
+       ├── Cardinality: 108 (unique years)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`round`** (CATEGORICAL):
+    ├── Business Meaning: Round of the series (e.g., WS for World Series)
+    └── Value Profile:
+       ├── Cardinality: 13 (unique rounds)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`teamIDwinner`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the winning team
+    └── Value Profile:
+       ├── Cardinality: 38 (unique winning teams)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`lgIDwinner`** (CATEGORICAL):
+    ├── Business Meaning: League identifier for the winning team
+    └── Value Profile:
+       ├── Cardinality: 2 (unique leagues)
+       ├─── Value Distribution: Very low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`teamIDloser`** (CATEGORICAL):
+    ├── Business Meaning: Identifier for the losing team
+    └── Value Profile:
+       ├── Cardinality: 40 (unique losing teams)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`lgIDloser`** (CATEGORICAL):
+    ├── Business Meaning: League identifier for the losing team
+    └── Value Profile:
+       ├── Cardinality: 2 (unique leagues)
+       ├─── Value Distribution: Very low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`wins`** (CATEGORICAL):
+    ├── Business Meaning: Number of wins in the series
+    └── Value Profile:
+       ├── Cardinality: 4 (unique win counts)
+       ├─── Value Distribution: Very low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`losses`** (CATEGORICAL):
+    ├── Business Meaning: Number of losses in the series
+    └── Value Profile:
+       ├── Cardinality: 4 (unique loss counts)
+       ├─── Value Distribution: Very low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`ties`** (CATEGORICAL):
+    ├── Business Meaning: Number of ties in the series
+    └── Value Profile:
+       ├── Cardinality: 1 (constant value)
+       ├─── Value Distribution: Constant value
+       └─── Null%: 0%
+
+**Table: teams**: Contains information about teams, their performance, and statistics over the years.
+
+- **Columns (Exact Names):**
+  - **`yearID`** (NUMERIC):
+    ├── Business Meaning: Year of the team's performance
+    └── Value Profile:
+       ├── Cardinality: 142 (unique years)
+       ├─── Value Distribution: Wide range (1871-2012), moderate skewness
+       └─── Null%: 0%
+
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: League identifier for the team
+    └── Value Profile:
+       ├── Cardinality: 7 (unique leagues)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`teamID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each team
+    └── Value Profile:
+       ├── Cardinality: 149 (unique teams)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`franchID`** (TEXT):
+    ├── Business Meaning: Identifier for the franchise of the team
+    └── Value Profile:
+       ├── Cardinality: 120 (unique franchises)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`divID`** (CATEGORICAL):
+    ├── Business Meaning: Division identifier for the team
+    └── Value Profile:
+       ├── Cardinality: 3 (unique divisions)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`Rank`** (NUMERIC):
+    ├── Business Meaning: Rank of the team in the league
+    └── Value Profile:
+       ├── Cardinality: 13 (unique ranks)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`G`** (NUMERIC):
+    ├── Business Meaning: Total games played by the team
+    └── Value Profile:
+       ├── Cardinality: 122 (unique game counts)
+       ├─── Value Distribution: Wide range (6-165), moderate skewness
+       └─── Null%: 0%
+
+  - **`W`** (NUMERIC):
+    ├── Business Meaning: Total wins by the team
+    └── Value Profile:
+       ├── Cardinality: 112 (unique win counts)
+       ├─── Value Distribution: Wide range (0-116), moderate skewness
+       └─── Null%: 0%
+
+  - **`L`** (NUMERIC):
+    ├── Business Meaning: Total losses by the team
+    └── Value Profile:
+       ├── Cardinality: 113 (unique loss counts)
+       ├─── Value Distribution: Wide range (4-134), moderate skewness
+       └─── Null%: 0%
+
+  - **`AB`** (NUMERIC):
+    ├── Business Meaning: Total at-bats by the team
+    └── Value Profile:
+       ├── Cardinality: 1095 (unique at-bat counts)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`H`** (NUMERIC):
+    ├── Business Meaning: Total hits by the team
+    └── Value Profile:
+       ├── Cardinality: 729 (unique hit counts)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`2B`** (NUMERIC):
+    ├── Business Meaning: Total doubles by the team
+    └── Value Profile:
+       ├── Cardinality: 311 (unique double counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`3B`** (NUMERIC):
+    ├── Business Meaning: Total triples by the team
+    └── Value Profile:
+       ├── Cardinality: 122 (unique triple counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`HR`** (NUMERIC):
+    ├── Business Meaning: Total home runs by the team
+    └── Value Profile:
+       ├── Cardinality: 245 (unique home run counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`BB`** (NUMERIC):
+    ├── Business Meaning: Total walks by the team
+    └── Value Profile:
+       ├── Cardinality: 566 (unique walk counts)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`SO`** (NUMERIC):
+    ├── Business Meaning: Total strikeouts by the team
+    └── Value Profile:
+       ├── Cardinality: 981 (unique strikeout counts)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`SB`** (NUMERIC):
+    ├── Business Meaning: Total stolen bases by the team
+    └── Value Profile:
+       ├── Cardinality: 323 (unique stolen base counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`CS`** (NUMERIC):
+    ├── Business Meaning: Total caught stealing by the team
+    └── Value Profile:
+       ├── Cardinality: 138 (unique caught stealing counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`HBP`** (NUMERIC):
+    ├── Business Meaning: Total hit by pitch by the team
+    └── Value Profile:
+       ├── Cardinality: 61 (unique hit by pitch counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`SF`** (NUMERIC):
+    ├── Business Meaning: Total sacrifice flies by the team
+    └── Value Profile:
+       ├── Cardinality: 43 (unique sacrifice fly counts)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`RA`** (NUMERIC):
+    ├── Business Meaning: Total runs allowed by the team
+    └── Value Profile:
+       ├── Cardinality: 607 (unique runs allowed counts)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`ER`** (NUMERIC):
+    ├── Business Meaning: Total earned runs allowed by the team
+    └── Value Profile:
+       ├── Cardinality: 629 (unique earned run counts)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`ERA`** (NUMERIC):
+    ├── Business Meaning: Earned run average of the team
+    └── Value Profile:
+       ├── Cardinality: 7 (unique earned run averages)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`CG`** (NUMERIC):
+    ├── Business Meaning: Total complete games by the team
+    └── Value Profile:
+       ├── Cardinality: 147 (unique complete game counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`SHO`** (NUMERIC):
+    ├── Business Meaning: Total shutouts by the team
+    └── Value Profile:
+       ├── Cardinality: 32 (unique shutout counts)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`SV`** (NUMERIC):
+    ├── Business Meaning: Total saves by the team
+    └── Value Profile:
+       ├── Cardinality: 65 (unique save counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`IPouts`** (NUMERIC):
+    ├── Business Meaning: Total innings pitched by the team
+    └── Value Profile:
+       ├── Cardinality: 629 (unique innings pitched counts)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`HA`** (NUMERIC):
+    ├── Business Meaning: Total hits allowed by the team
+    └── Value Profile:
+       ├── Cardinality: 743 (unique hits allowed counts)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`HRA`** (NUMERIC):
+    ├── Business Meaning: Total home runs allowed by the team
+    └── Value Profile:
+       ├── Cardinality: 232 (unique home runs allowed counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`BBA`** (NUMERIC):
+    ├── Business Meaning: Total walks allowed by the team
+    └── Value Profile:
+       ├── Cardinality: 566 (unique walks allowed counts)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`BPF`** (NUMERIC):
+    ├── Business Meaning: Batting park factor for the team
+    └── Value Profile:
+       ├── Cardinality: 42 (unique batting park factors)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`PPF`** (NUMERIC):
+    ├── Business Meaning: Pitching park factor for the team
+    └── Value Profile:
+       ├── Cardinality: 42 (unique pitching park factors)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`teamIDBR`** (TEXT):
+    ├── Business Meaning: Team identifier for Baseball Reference
+    └── Value Profile:
+       ├── Cardinality: 101 (unique team identifiers)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`teamIDlahman45`** (TEXT):
+    ├── Business Meaning: Team identifier for Lahman database
+    └── Value Profile:
+       ├── Cardinality: 148 (unique team identifiers)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`teamIDretro`** (TEXT):
+    ├── Business Meaning: Team identifier for RetroSheet
+    └── Value Profile:
+       ├── Cardinality: 149 (unique team identifiers)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+**Table: teamsfranchises**: Contains information about franchises and their active status.
+
+- **Columns (Exact Names):**
+  - **`franchID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each franchise
+    └── Value Profile:
+       ├── Cardinality: 120 (unique franchises)
+       ├─── Value Distribution: Unique values, not null
+       └─── Null%: 0%
+
+  - **`franchName`** (TEXT):
+    ├── Business Meaning: Name of the franchise
+    └── Value Profile:
+       ├── Cardinality: 99 (unique franchise names)
+       ├─── Value Distribution: High cardinality, not unique
+       └─── Null%: 0%
+
+  - **`active`** (CATEGORICAL):
+    ├── Business Meaning: Indicates if the franchise is currently active
+    └── Value Profile:
+       ├── Cardinality: 3 (unique active statuses)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`NAassoc`** (TEXT):
+    ├── Business Meaning: Association with North American leagues
+    └── Value Profile:
+       ├── Cardinality: 12 (unique associations)
+       ├─── Value Distribution: Unique values, not null
+       └─── Null%: 0%
+
+**Table: teamshalf**: Contains information about team performance in each half of the season.
+
+- **Columns (Exact Names):**
+  - **`yearID`** (CATEGORICAL):
+    ├── Business Meaning: Year of the half-season performance
+    └── Value Profile:
+       ├── Cardinality: 1 (constant value)
+       ├─── Value Distribution: Constant value
+       └─── Null%: 0%
+
+  - **`lgID`** (CATEGORICAL):
+    ├── Business Meaning: League identifier for the half-season
+    └── Value Profile:
+       ├── Cardinality: 2 (unique leagues)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`teamID`** (TEXT):
+    ├── Business Meaning: Unique identifier for each team in the half-season
+    └── Value Profile:
+       ├── Cardinality: 26 (unique teams)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`Half`** (CATEGORICAL):
+    ├── Business Meaning: Indicates the half of the season (1 or 2)
+    └── Value Profile:
+       ├── Cardinality: 2 (unique halves)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`divID`** (CATEGORICAL):
+    ├── Business Meaning: Division identifier for the half-season
+    └── Value Profile:
+       ├── Cardinality: 2 (unique divisions)
+       ├─── Value Distribution: Low cardinality, not unique
+       └─── Null%: 0%
+
+  - **`DivWin`** (BOOLEAN):
+    ├── Business Meaning: Indicates if the team won the division in the half-season
+    └── Value Profile:
+       ├── Cardinality: 1 (constant value)
+       ├─── Value Distribution: Constant value
+       └─── Null%: 0%
+
+  - **`Rank`** (NUMERIC):
+    ├── Business Meaning: Rank of the team in the division for the half-season
+    └── Value Profile:
+       ├── Cardinality: 7 (unique ranks)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`G`** (NUMERIC):
+    ├── Business Meaning: Total games played in the half-season
+    └── Value Profile:
+       ├── Cardinality: 13 (unique game counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`W`** (NUMERIC):
+    ├── Business Meaning: Total wins in the half-season
+    └── Value Profile:
+       ├── Cardinality: 20 (unique win counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%
+
+  - **`L`** (NUMERIC):
+    ├── Business Meaning: Total losses in the half-season
+    └── Value Profile:
+       ├── Cardinality: 18 (unique loss counts)
+       ├─── Value Distribution: Moderate cardinality, not unique
+       └─── Null%: 0%

@@ -1,0 +1,392 @@
+Table: allstarfull
+- playerID: Text, 1634 unique values, 0 null values, 4831 total values, no missing values, insights: Not unique, indicates multiple entries for players.
+- yearID: Numeric, 80 unique values, 0 null values, 4831 total values, no missing values, insights: Range from 1933 to 2012, with a mean of 1974.58.
+- gameNum: Categorical, 3 unique values, 0 null values, 4831 total values, no missing values, insights: Highly concentrated, indicating limited game numbers.
+- gameID: Text, 83 unique values, 0 null values, 4782 total values, no missing values, insights: Not unique, suggests multiple games per player.
+- teamID: Categorical, 45 unique values, 0 null values, 4831 total values, no missing values, insights: Not unique, indicating multiple teams represented.
+- lgID: Categorical, 2 unique values, 0 null values, 4831 total values, no missing values, insights: Not unique, indicates two leagues.
+- GP: Categorical, 2 unique values, 37 null values, 4794 total values, no missing values, insights: Not unique, indicates limited game participation.
+- startingPos: Numeric, 11 unique values, 0 null values, 1520 total values, no missing values, insights: Range from 0 to 10, with a mean of 5.06.
+
+Table: appearances
+- yearID: Numeric, 142 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 1871 to 2012, with a mean of 1958.83.
+- teamID: Text, 150 unique values, 0 null values, 92306 total values, no missing values, insights: Not unique, indicating multiple teams.
+- lgID: Categorical, 7 unique values, 0 null values, 92306 total values, no missing values, insights: Not unique, indicates multiple leagues.
+- playerID: Text, 16405 unique values, 0 null values, 92306 total values, no missing values, insights: Not unique, indicating many players.
+- G_all: Numeric, 166 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 165, with a mean of 52.13.
+- G_batting: Numeric, 164 unique values, 0 null values, 40610 total values, no missing values, insights: Range from 0 to 163, with a mean of 35.37.
+- G_defense: Numeric, 166 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 165, with a mean of 49.57.
+- G_p: Numeric, 166 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 165, with a mean of 49.49.
+- G_c: Numeric, 95 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 106, with a mean of 10.06.
+- G_1b: Numeric, 157 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 160, with a mean of 4.88.
+- G_2b: Numeric, 163 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 162, with a mean of 4.74.
+- G_3b: Numeric, 164 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 163, with a mean of 4.70.
+- G_ss: Numeric, 165 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 164, with a mean of 4.72.
+- G_lf: Numeric, 166 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 165, with a mean of 4.70.
+- G_cf: Numeric, 164 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 163, with a mean of 4.94.
+- G_rf: Numeric, 163 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 162, with a mean of 4.66.
+- G_of: Numeric, 163 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 162, with a mean of 4.82.
+- G_dh: Numeric, 165 unique values, 0 null values, 92306 total values, no missing values, insights: Range from 0 to 164, with a mean of 14.13.
+- G_ph: Numeric, 157 unique values, 0 null values, 40610 total values, no missing values, insights: Range from 0 to 162, with a mean of 2.05.
+- G_pr: Numeric, 93 unique values, 0 null values, 40610 total values, no missing values, insights: Range from 0 to 95, with a mean of 4.76.
+
+Table: awardsmanagers
+- managerID: Text, 74 unique values, 0 null values, 156 total values, no missing values, insights: Not unique, indicating multiple awards for managers.
+- awardID: Categorical, 2 unique values, 0 null values, 156 total values, no missing values, insights: Not unique, indicates limited award types.
+- yearID: Numeric, 77 unique values, 0 null values, 156 total values, no missing values, insights: Range from 1936 to 2012, with a mean of 1985.29.
+- lgID: Categorical, 3 unique values, 0 null values, 156 total values, no missing values, insights: Not unique, indicates multiple leagues.
+- tie: Boolean, 1 unique value, 0 null values, 156 total values, no missing values, insights: Indicates whether there was a tie.
+- notes: Unsupported, 0 unique values, 0 null values, 156 total values, no missing values, insights: No notes provided.
+
+Table: awardsplayers
+- playerID: Text, 1213 unique values, 0 null values, 5795 total values, no missing values, insights: Not unique, indicating multiple awards for players.
+- awardID: Categorical, 27 unique values, 0 null values, 5795 total values, no missing values, insights: Not unique, indicates various award types.
+- yearID: Numeric, 114 unique values, 0 null values, 5795 total values, no missing values, insights: Range from 1877 to 2012, with a mean of 1966.36.
+- lgID: Categorical, 4 unique values, 0 null values, 5795 total values, no missing values, insights: Not unique, indicates multiple leagues.
+- tie: Boolean, 1 unique value, 0 null values, 5795 total values, no missing values, insights: Indicates whether there was a tie.
+- notes: Categorical, 28 unique values, 0 null values, 4463 total values, no missing values, insights: Various notes provided.
+
+Table: awardssharemanagers
+- awardID: Categorical, 2 unique values, 0 null values, 372 total values, no missing values, insights: Not unique, indicates limited award types.
+- yearID: Numeric, 30 unique values, 0 null values, 372 total values, no missing values, insights: Range from 1983 to 2012, with a mean of 1998.17.
+- lgID: Categorical, 2 unique values, 0 null values, 372 total values, no missing values, insights: Not unique, indicates multiple leagues.
+- managerID: Text, 103 unique values, 0 null values, 372 total values, no missing values, insights: Not unique, indicating multiple managers.
+- pointsWon: Numeric, 110 unique values, 0 null values, 372 total values, no missing values, insights: Range from 1 to 154, with a mean of 40.03.
+- pointsMax: Categorical, 5 unique values, 0 null values, 372 total values, no missing values, insights: Not unique, indicates various maximum points.
+- votesFirst: Numeric, 30 unique values, 0 null values, 372 total values, no missing values, insights: Range from 0 to 30, with a mean of 4.57.
+
+Here is the summarized output based on the provided profiler report:
+
+### Table: awardsshareplayers
+- **awardID**: Categorical, 3 unique values, 0 null values, 6289 total values, no missing values, insights: Not unique, highly concentrated.
+- **yearID**: Numeric, 94 unique values, 0 null values, 6289 total values, no missing values, insights: Range from 1911 to 2012, slightly negatively skewed.
+- **lgID**: Categorical, 3 unique values, 0 null values, 6289 total values, no missing values, insights: Not unique, highly concentrated.
+- **playerID**: Text, 2157 unique values, 0 null values, 6289 total values, no missing values, insights: Not unique, diverse player representation.
+- **pointsWon**: Numeric, 330 unique values, 0 null values, 6289 total values, no missing values, insights: Highly skewed with a mean of 42.6.
+- **pointsMax**: Numeric, 18 unique values, 0 null values, 6289 total values, no missing values, insights: Range from 16 to 448, moderately skewed.
+- **votesFirst**: Numeric, 33 unique values, 0 null values, 5931 total values, no missing values, insights: Highly skewed with a mean of 1.57.
+
+### Table: batting
+- **playerID**: Text, 16405 unique values, 0 null values, 92353 total values, no missing values, insights: Not unique, diverse player representation.
+- **yearID**: Numeric, 142 unique values, 0 null values, 92353 total values, no missing values, insights: Range from 1871 to 2012, slightly negatively skewed.
+- **stint**: Categorical, 5 unique values, 0 null values, 92353 total values, no missing values, insights: Not unique, limited categories.
+- **teamID**: Text, 149 unique values, 0 null values, 92353 total values, no missing values, insights: Not unique, diverse team representation.
+- **lgID**: Categorical, 7 unique values, 0 null values, 92353 total values, no missing values, insights: Not unique, limited categories.
+- **G**: Numeric, 165 unique values, 0 null values, 92353 total values, no missing values, insights: Range from 1 to 165, moderately skewed.
+- **G_batting**: Numeric, 166 unique values, 0 null values, 91950 total values, no missing values, insights: Range from 0 to 165, moderately skewed.
+- **AB**: Numeric, 698 unique values, 0 null values, 86230 total values, no missing values, insights: Range from 0 to 716, moderately skewed.
+- **R**: Numeric, 167 unique values, 0 null values, 86230 total values, no missing values, insights: Range from 0 to 192, moderately skewed.
+- **H**: Numeric, 250 unique values, 0 null values, 86230 total values, no missing values, insights: Range from 0 to 262, moderately skewed.
+- **2B**: Numeric, 64 unique values, 0 null values, 86230 total values, no missing values, insights: Range from 0 to 67, moderately skewed.
+- **3B**: Numeric, 32 unique values, 0 null values, 86230 total values, no missing values, insights: Range from 0 to 36, highly skewed.
+- **HR**: Numeric, 66 unique values, 0 null values, 86230 total values, no missing values, insights: Range from 0 to 73, highly skewed.
+- **RBI**: Numeric, 175 unique values, 0 null values, 85808 total values, no missing values, insights: Range from 0 to 191, moderately skewed.
+- **SB**: Numeric, 114 unique values, 0 null values, 84931 total values, no missing values, insights: Range from 0 to 138, highly skewed.
+- **CS**: Numeric, 36 unique values, 0 null values, 62783 total values, no missing values, insights: Range from 0 to 42, highly skewed.
+- **BB**: Numeric, 154 unique values, 0 null values, 86230 total values, no missing values, insights: Range from 0 to 232, moderately skewed.
+- **SO**: Numeric, 193 unique values, 0 null values, 78396 total values, no missing values, insights: Range from 0 to 222, moderately skewed.
+- **IBB**: Numeric, 45 unique values, 0 null values, 49682 total values, no missing values, insights: Range from 0 to 120, highly skewed.
+- **HBP**: Numeric, 41 unique values, 0 null values, 83415 total values, no missing values, insights: Range from 0 to 51, highly skewed.
+- **SH**: Numeric, 54 unique values, 0 null values, 79899 total values, no missing values, insights: Range from 0 to 67, highly skewed.
+- **SF**: Numeric, 20 unique values, 0 null values, 50212 total values, no missing values, insights: Range from 0 to 19, highly skewed.
+- **GIDP**: Numeric, 35 unique values, 0 null values, 60132 total values, no missing values, insights: Range from 0 to 36, highly skewed.
+
+### Table: battingpost
+- **yearID**: Numeric, 116 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 1884 to 2012, slightly negatively skewed.
+- **round**: Categorical, 14 unique values, 0 null values, 9798 total values, no missing values, insights: Not unique, limited categories.
+- **playerID**: Text, 3391 unique values, 0 null values, 9798 total values, no missing values, insights: Not unique, diverse player representation.
+- **teamID**: Categorical, 48 unique values, 0 null values, 9798 total values, no missing values, insights: Not unique, diverse team representation.
+- **lgID**: Categorical, 3 unique values, 0 null values, 9798 total values, no missing values, insights: Not unique, limited categories.
+- **G**: Numeric, 14 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 1 to 15, moderately skewed.
+- **AB**: Numeric, 52 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 0 to 66, moderately skewed.
+- **R**: Numeric, 13 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 0 to 13, highly skewed.
+- **H**: Numeric, 19 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 0 to 21, moderately skewed.
+- **2B**: Numeric, 7 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 0 to 6, highly skewed.
+- **3B**: Numeric, 5 unique values, 0 null values, 9798 total values, no missing values, insights: Not unique, limited categories.
+- **HR**: Numeric, 7 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 0 to 6, highly skewed.
+- **RBI**: Numeric, 14 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 0 to 13, highly skewed.
+- **SB**: Numeric, 12 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 0 to 15, highly skewed.
+- **CS**: Numeric, 6 unique values, 0 null values, 9597 total values, no missing values, insights: Range from 0 to 5, highly skewed.
+- **BB**: Numeric, 14 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 0 to 13, highly skewed.
+- **SO**: Numeric, 14 unique values, 0 null values, 9798 total values, no missing values, insights: Range from 0 to 13, highly skewed.
+- **IBB**: Numeric, 8 unique values, 0 null values, 9513 total values, no missing values, insights: Range from 0 to 7, highly skewed.
+- **HBP**: Categorical, 5 unique values, 0 null values, 9313 total values, no missing values, insights: Not unique, limited categories.
+- **SH**: Numeric, 6 unique values, 0 null values, 9312 total values, no missing values, insights: Range from 0 to 5, highly skewed.
+- **SF**: Categorical, 4 unique values, 0 null values, 9312 total values, no missing values, insights: Not unique, limited categories.
+- **GIDP**: Numeric, 6 unique values, 0 null values, 9312 total values, no missing values, insights: Range from 0 to 5, highly skewed.
+
+### Table: els_teamnames
+- **id**: Numeric, 314 unique values, 0 null values, 314 total values, no missing values, insights: Unique values, evenly distributed.
+- **lgid**: Categorical, 7 unique values, 0 null values, 314 total values, no missing values, insights: Not unique, limited categories.
+- **teamid**: Text, 149 unique values, 0 null values, 314 total values, no missing values, insights: Not unique, diverse team representation.
+- **franchid**: Text, 120 unique values, 0 null values, 314 total values, no missing values, insights: Not unique, diverse franchise representation.
+- **name**: Text, 139 unique values, 0 null values, 314 total values, no missing values, insights: Not unique, diverse team names.
+- **park**: Text, 212 unique values, 0 null values, 285 total values, no missing values, insights: Not unique, diverse park representation.
+
+### Table: fielding
+- **playerID**: Text, 14196 unique values, 0 null values, 137975 total values, no missing values, insights: Not unique, diverse player representation.
+- **yearID**: Numeric, 142 unique values, 0 null values, 137975 total values, no missing values, insights: Range from 1871 to 2012, slightly negatively skewed.
+- **stint**: Categorical, 5 unique values, 0 null values, 137975 total values, no missing values, insights: Not unique, limited categories.
+- **teamID**: Text, 149 unique values, 0 null values, 137975 total values, no missing values, insights: Not unique, diverse team representation.
+- **lgID**: Categorical, 7 unique values, 0 null values, 137975 total values, no missing values, insights: Not unique, limited categories.
+- **POS**: Categorical, 11 unique values, 0 null values, 137975 total values, no missing values, insights: Not unique, diverse position representation.
+- **G**: Numeric, 166 unique values, 0 null values, 137975 total values, no missing values, insights: Range from 0 to 165, moderately skewed.
+- **GS**: Numeric, 165 unique values, 0 null values, 86711 total values, no missing values, insights: Range from 0 to 164, moderately skewed.
+- **InnOuts**: Numeric, 4300 unique values, 0 null values, 86711 total values, no missing values, insights: Range from 0 to 4469, highly skewed.
+- **PO**: Numeric, 1512 unique values, 0 null values, 131514 total values, no missing values, insights: Range from 0 to 1846, highly skewed.
+- **A**: Numeric, 577 unique values, 0 null values, 131514 total values, no missing values, insights: Range from 0 to 641, highly skewed.
+- **E**: Numeric, 107 unique values, 0 null values, 131513 total values, no missing values, insights: Range from 0 to 119, highly skewed.
+- **DP**: Numeric, 168 unique values, 0 null values, 131514 total values, no missing values, insights: Range from 0 to 194, highly skewed.
+- **PB**: Numeric, 86 unique values, 0 null values, 11328 total values, no missing values, insights: Range from 0 to 105, highly skewed.
+- **WP**: Numeric, 62 unique values, 0 null values, 4701 total values, no missing values, insights: Range from 0 to 69, moderately skewed.
+- **SB**: Numeric, 131 unique values, 0 null values, 6896 total values, no missing values, insights: Range from 0 to 155, moderately skewed.
+- **CS**: Numeric, 69 unique values, 0 null values, 6896 total values, no missing values, insights: Range from 0 to 70, moderately skewed.
+- **ZR**: Numeric, 13 unique values, 0 null values, 4634 total values, no missing values, insights: Range from 0 to 15, highly skewed.
+
+This summary captures all the tables and their respective columns, along with key details as requested.
+
+Table: fieldingof
+- playerID: Text, 3512 unique values, 0 null values, 12027 total values, insights: Not unique, represents player identifiers.
+- yearID: Numeric, 85 unique values, 0 null values, 12027 total values, insights: Not unique, represents years from 1871 to 1955, with a mean of 1912.74.
+- stint: Categorical, 5 unique values, 0 null values, 12027 total values, insights: Not unique, indicates player stints.
+- Glf: Numeric, 157 unique values, 37 null values, 11990 total values, insights: Not unique, represents a numeric value with a mean of 15.74 and high skewness.
+- Gcf: Numeric, 159 unique values, 37 null values, 11990 total values, insights: Not unique, similar distribution characteristics as Glf.
+- Grf: Numeric, 159 unique values, 43 null values, 11984 total values, insights: Not unique, similar distribution characteristics as Glf and Gcf.
+
+Table: fieldingpost
+- playerID: Text, 3160 unique values, 0 null values, 10346 total values, insights: Not unique, represents player identifiers.
+- yearID: Numeric, 108 unique values, 0 null values, 10346 total values, insights: Not unique, represents years from 1903 to 2012, with a mean of 1981.50.
+- teamID: Categorical, 41 unique values, 0 null values, 10346 total values, insights: Not unique, indicates team identifiers.
+- lgID: Categorical, 2 unique values, 0 null values, 10346 total values, insights: Not unique, indicates league identifiers.
+- round: Categorical, 13 unique values, 0 null values, 10346 total values, insights: Not unique, indicates playoff rounds.
+- POS: Categorical, 11 unique values, 0 null values, 10346 total values, insights: Not unique, indicates player positions.
+- G: Numeric, 9 unique values, 0 null values, 10346 total values, insights: Not unique, represents games played with a mean of 3.01.
+- GS: Numeric, 9 unique values, 0 null values, 10346 total values, insights: Not unique, represents games started with a mean of 2.25.
+- InnOuts: Numeric, 210 unique values, 161 null values, 10185 total values, insights: Not unique, represents innings with a mean of 60.46.
+- PO: Numeric, 83 unique values, 0 null values, 10346 total values, insights: Not unique, represents putouts with a mean of 6.71.
+- A: Numeric, 34 unique values, 0 null values, 10346 total values, insights: Not unique, represents assists with a mean of 2.61.
+- E: Numeric, 8 unique values, 0 null values, 10346 total values, insights: Not unique, represents errors with a mean of 0.21.
+- DP: Numeric, 13 unique values, 0 null values, 10346 total values, insights: Not unique, represents double plays with a mean of 0.56.
+- TP: Categorical, 2 unique values, 0 null values, 10346 total values, insights: Not unique, indicates triple plays.
+- PB: Categorical, 4 unique values, 0 null values, 965 total values, insights: Not unique, indicates passed balls.
+- SB: Numeric, 15 unique values, 0 null values, 4983 total values, insights: Not unique, represents stolen bases with a mean of 0.60.
+- CS: Numeric, 10 unique values, 0 null values, 4983 total values, insights: Not unique, represents caught stealing with a mean of 0.34.
+
+Table: halloffame
+- hofID: Text, 1186 unique values, 0 null values, 3883 total values, insights: Not unique, represents Hall of Fame identifiers.
+- yearID: Numeric, 75 unique values, 0 null values, 3883 total values, insights: Not unique, represents years from 1936 to 2013, with a mean of 1968.13.
+- votedBy: Categorical, 9 unique values, 0 null values, 3883 total values, insights: Not unique, indicates voting bodies.
+- ballots: Numeric, 69 unique values, 169 null values, 3714 total values, insights: Not unique, represents ballots cast with a mean of 317.85.
+- needed: Numeric, 60 unique values, 0 null values, 3632 total values, insights: Not unique, represents votes needed for induction with a mean of 240.64.
+- votes: Numeric, 344 unique values, 0 null values, 3714 total values, insights: Not unique, represents total votes received with a mean of 49.30.
+- inducted: Boolean, 2 unique values, 0 null values, 3883 total values, insights: Not unique, indicates induction status.
+- category: Categorical, 4 unique values, 0 null values, 3883 total values, insights: Not unique, indicates categories of induction.
+
+Table: managers
+- managerID: Text, 676 unique values, 0 null values, 3292 total values, insights: Not unique, represents manager identifiers.
+- yearID: Numeric, 142 unique values, 0 null values, 3292 total values, insights: Not unique, represents years from 1871 to 2012, with a mean of 1952.09.
+- teamID: Text, 148 unique values, 0 null values, 3292 total values, insights: Not unique, represents team identifiers.
+- lgID: Categorical, 7 unique values, 0 null values, 3292 total values, insights: Not unique, indicates league identifiers.
+- inseason: Numeric, 9 unique values, 0 null values, 3292 total values, insights: Not unique, indicates in-season status with a mean of 1.24.
+- G: Numeric, 165 unique values, 0 null values, 3292 total values, insights: Not unique, represents games managed with a mean of 123.35.
+- W: Numeric, 114 unique values, 0 null values, 3292 total values, insights: Not unique, represents wins with a mean of 61.35.
+- L: Numeric, 118 unique values, 0 null values, 3292 total values, insights: Not unique, represents losses with a mean of 61.27.
+- rank: Numeric, 12 unique values, 0 null values, 3291 total values, insights: Not unique, represents rank with a mean of 4.37.
+- plyrMgr: Boolean, 2 unique values, 0 null values, 3292 total values, insights: Not unique, indicates player-manager status.
+
+Table: managershalf
+- managerID: Text, 51 unique values, 0 null values, 89 total values, insights: Not unique, represents manager identifiers.
+- yearID: Categorical, 2 unique values, 0 null values, 89 total values, insights: Not unique, indicates year status.
+- teamID: Categorical, 32 unique values, 0 null values, 89 total values, insights: Not unique, indicates team identifiers.
+- lgID: Categorical, 2 unique values, 0 null values, 89 total values, insights: Not unique, indicates league identifiers.
+- inseason: Categorical, 5 unique values, 0 null values, 89 total values, insights: Not unique, indicates in-season status.
+- half: Categorical, 2 unique values, 0 null values, 89 total values, insights: Not unique, indicates half-season status.
+- G: Numeric, 37 unique values, 0 null values, 89 total values, insights: Not unique, represents games managed with a mean of 50.30.
+- W: Numeric, 40 unique values, 0 null values, 89 total values, insights: Not unique, represents wins with a mean of 25.10.
+- L: Numeric, 33 unique values, 0 null values, 89 total values, insights: Not unique, represents losses with a mean of 24.71.
+- rank: Numeric, 12 unique values, 0 null values, 89 total values, insights: Not unique, represents rank with a mean of 4.97.
+
+Table: pitching
+    playerID: Text, 7797 unique values, 0 null values, 39361 total values, 0 missing values, insights: Not unique, diverse player IDs.
+    yearID: Numeric, 142 unique values, 0 null values, 39361 total values, 0 missing values, insights: Range from 1871 to 2012, with a mean of 1962.47.
+    stint: Categorical, 4 unique values, 0 null values, 39361 total values, 0 missing values, insights: Limited distinct values indicating few stints.
+    teamID: Text, 149 unique values, 0 null values, 39361 total values, 0 missing values, insights: Diverse team representation.
+    lgID: Categorical, 7 unique values, 0 null values, 39361 total values, 0 missing values, insights: Represents different leagues.
+    W: Numeric, 54 unique values, 0 null values, 39361 total values, 0 missing values, insights: Wins range from 0 to 59, with a mean of 4.96.
+    L: Numeric, 43 unique values, 0 null values, 39361 total values, 0 missing values, insights: Losses range from 0 to 48, with a mean of 4.96.
+    G: Numeric, 94 unique values, 0 null values, 39361 total values, 0 missing values, insights: Games played range from 1 to 106, with a mean of 23.60.
+    GS: Numeric, 75 unique values, 0 null values, 39361 total values, 0 missing values, insights: Games started range from 0 to 75, with a mean of 9.98.
+    CG: Numeric, 74 unique values, 0 null values, 39361 total values, 0 missing values, insights: Complete games range from 0 to 75, with a mean of 3.58.
+    SHO: Numeric, 15 unique values, 0 null values, 39361 total values, 0 missing values, insights: Shutouts range from 0 to 16, with a mean of 0.50.
+    SV: Numeric, 57 unique values, 0 null values, 39361 total values, 0 missing values, insights: Saves range from 0 to 62, with a mean of 1.53.
+    IPouts: Numeric, 1313 unique values, 0 null values, 39361 total values, 0 missing values, insights: Innings pitched outs range from 0 to 2040, with a mean of 266.91.
+    H: Numeric, 533 unique values, 0 null values, 39361 total values, 0 missing values, insights: Hits range from 0 to 772, with a mean of 89.48.
+    ER: Numeric, 216 unique values, 0 null values, 39361 total values, 0 missing values, insights: Earned runs range from 0 to 291, with a mean of 37.77.
+    HR: Numeric, 48 unique values, 0 null values, 39361 total values, 0 missing values, insights: Home runs range from 0 to 50, with a mean of 6.49.
+    BB: Numeric, 210 unique values, 0 null values, 39361 total values, 0 missing values, insights: Walks range from 0 to 289, with a mean of 31.45.
+    SO: Numeric, 338 unique values, 0 null values, 39361 total values, 0 missing values, insights: Strikeouts range from 0 to 513, with a mean of 46.69.
+    BAOpp: Categorical, 3 unique values, 0 null values, 33401 total values, 0 missing values, insights: Limited distinct values indicating few batting averages against.
+    ERA: Numeric, 52 unique values, 0 null values, 39278 total values, 0 missing values, insights: Earned run average ranges from 0.0 to 189.0, with a mean of 4.59.
+    IBB: Numeric, 22 unique values, 0 null values, 24792 total values, 0 missing values, insights: Intentional walks range from 0 to 23, with a mean of 2.65.
+    WP: Numeric, 52 unique values, 0 null values, 39224 total values, 0 missing values, insights: Wild pitches range from 0 to 63, with a mean of 2.58.
+    HBP: Numeric, 34 unique values, 0 null values, 38799 total values, 0 missing values, insights: Hit by pitch ranges from 0 to 41, with a mean of 2.30.
+    BK: Numeric, 16 unique values, 0 null values, 39357 total values, 0 missing values, insights: Balks range from 0 to 16, with a mean of 0.32.
+    BFP: Numeric, 1636 unique values, 0 null values, 39122 total values, 0 missing values, insights: Batters faced range from 0 to 2906, with a mean of 359.43.
+    GF: Numeric, 78 unique values, 0 null values, 39228 total values, 0 missing values, insights: Games finished range from 0 to 84, with a mean of 6.43.
+    R: Numeric, 345 unique values, 0 null values, 39361 total values, 0 missing values, insights: Runs range from 0 to 519, with a mean of 45.38.
+    SH: Unsupported, 0 unique values, 0 null values, 0 total values, 0 missing values, insights: No data available.
+    SF: Unsupported, 0 unique values, 0 null values, 0 total values, 0 missing values, insights: No data available.
+    GIDP: Unsupported, 0 unique values, 0 null values, 0 total values, 0 missing values, insights: No data available.
+    pitching_avg: Numeric, 4802 unique values, 0 null values, 39361 total values, 0 missing values, insights: Pitching average ranges from 0.0 to 15.0, with a mean of 1.88.
+
+Table: pitchingpost
+    playerID: Text, 1384 unique values, 0 null values, 4197 total values, 0 missing values, insights: Diverse player IDs.
+    yearID: Numeric, 116 unique values, 0 null values, 4197 total values, 0 missing values, insights: Range from 1884 to 2012, with a mean of 1982.23.
+    round: Categorical, 14 unique values, 0 null values, 4197 total values, 0 missing values, insights: Limited distinct values indicating few rounds.
+    teamID: Categorical, 48 unique values, 0 null values, 4197 total values, 0 missing values, insights: Diverse team representation.
+    lgID: Categorical, 3 unique values, 0 null values, 4197 total values, 0 missing values, insights: Represents different leagues.
+    W: Categorical, 5 unique values, 0 null values, 4197 total values, 0 missing values, insights: Limited distinct values indicating few wins.
+    L: Categorical, 5 unique values, 0 null values, 4197 total values, 0 missing values, insights: Limited distinct values indicating few losses.
+    G: Numeric, 8 unique values, 0 null values, 4197 total values, 0 missing values, insights: Games played range from 1 to 8, with a mean of 1.90.
+    GS: Numeric, 8 unique values, 0 null values, 4197 total values, 0 missing values, insights: Games started range from 0 to 8, with a mean of 0.64.
+    CG: Numeric, 8 unique values, 0 null values, 4197 total values, 0 missing values, insights: Complete games range from 0 to 8, with a mean of 0.15.
+    SHO: Categorical, 4 unique values, 0 null values, 4197 total values, 0 missing values, insights: Limited distinct values indicating few shutouts.
+    SV: Categorical, 5 unique values, 0 null values, 4197 total values, 0 missing values, insights: Limited distinct values indicating few saves.
+    IPouts: Numeric, 90 unique values, 0 null values, 4197 total values, 0 missing values, insights: Innings pitched outs range from 0 to 213, with a mean of 17.14.
+    H: Numeric, 39 unique values, 0 null values, 4197 total values, 0 missing values, insights: Hits range from 0 to 64, with a mean of 5.25.
+    ER: Numeric, 20 unique values, 0 null values, 4197 total values, 0 missing values, insights: Earned runs range from 0 to 26, with a mean of 2.22.
+    HR: Numeric, 6 unique values, 0 null values, 4197 total values, 0 missing values, insights: Home runs range from 0 to 5, with a mean of 0.52.
+    BB: Numeric, 19 unique values, 0 null values, 4197 total values, 0 missing values, insights: Walks range from 0 to 32, with a mean of 2.04.
+    SO: Numeric, 31 unique values, 0 null values, 4197 total values, 0 missing values, insights: Strikeouts range from 0 to 35, with a mean of 3.90.
+    BAOpp: Categorical, 2 unique values, 0 null values, 4130 total values, 0 missing values, insights: Limited distinct values indicating few batting averages against.
+    ERA: Numeric, 35 unique values, 0 null values, 3953 total values, 0 missing values, insights: Earned run average ranges from 0.0 to 108.0, with a mean of 4.36.
+    IBB: Categorical, 5 unique values, 0 null values, 4147 total values, 0 missing values, insights: Limited distinct values indicating few intentional walks.
+    WP: Numeric, 6 unique values, 0 null values, 4147 total values, 0 missing values, insights: Wild pitches range from 0 to 5, with a mean of 0.15.
+    HBP: Categorical, 4 unique values, 0 null values, 4147 total values, 0 missing values, insights: Limited distinct values indicating few hit by pitches.
+    BK: Categorical, 2 unique values, 0 null values, 4089 total values, 0 missing values, insights: Limited distinct values indicating few balks.
+    BFP: Numeric, 108 unique values, 0 null values, 4147 total values, 0 missing values, insights: Batters faced range from 1 to 178, with a mean of 23.33.
+    GF: Numeric, 7 unique values, 0 null values, 4197 total values, 0 missing values, insights: Games finished range from 0 to 6, with a mean of 0.48.
+    R: Numeric, 28 unique values, 0 null values, 4197 total values, 0 missing values, insights: Runs range from 0 to 36, with a mean of 2.56.
+    SH: Numeric, 8 unique values, 0 null values, 4019 total values, 0 missing values, insights: Sacrifice hits range from 0 to 7, with a mean of 0.31.
+    SF: Categorical, 5 unique values, 0 null values, 4019 total values, 0 missing values, insights: Limited distinct values indicating few sacrifice flies.
+    GIDP: Numeric, 7 unique values, 0 null values, 4147 total values, 0 missing values, insights: Grounded into double plays range from 0 to 6, with a mean of 0.40.
+
+Table: players
+    lahmanID: Numeric, 16407 unique values, 0 null values, 439424 total values, 0 missing values, insights: Diverse player IDs.
+    playerID: Text, 16406 unique values, 0 null values, 439424 total values, 0 missing values, insights: Not unique, diverse player IDs.
+    managerID: Text, 557 unique values, 0 null values, 17215 total values, 0 missing values, insights: Diverse manager representation.
+    hofID: Text, 1120 unique values, 0 null values, 115394 total values, 0 missing values, insights: Hall of Fame IDs are diverse.
+    birthYear: Numeric, 151 unique values, 0 null values, 439049 total values, 0 missing values, insights: Range from 1831 to 1986, with a mean of 1936.06.
+    birthMonth: Numeric, 12 unique values, 0 null values, 438112 total values, 0 missing values, insights: Represents all months.
+    birthDay: Numeric, 31 unique values, 0 null values, 437472 total values, 0 missing values, insights: Represents all days.
+    birthCountry: Text, 53 unique values, 0 null values, 438751 total values, 0 missing values, insights: Diverse birth countries.
+    birthState: Text, 79 unique values, 0 null values, 400575 total values, 0 missing values, insights: Diverse birth states.
+    birthCity: Text, 4420 unique values, 0 null values, 438046 total values, 0 missing values, insights: Diverse birth cities.
+    deathYear: Numeric, 137 unique values, 0 null values, 160357 total values, 0 missing values, insights: Range from 1872 to 2008, with a mean of 1968.03.
+    deathMonth: Numeric, 12 unique values, 0 null values, 160326 total values, 0 missing values, insights: Represents all months.
+    deathDay: Numeric, 31 unique values, 0 null values, 160325 total values, 0 missing values, insights: Represents all days.
+    deathCountry: Categorical, 26 unique values, 0 null values, 158779 total values, 0 missing values, insights: Diverse death countries.
+    deathState: Text, 66 unique values, 0 null values, 157373 total values, 0 missing values, insights: Diverse death states.
+    deathCity: Text, 2343 unique values, 0 null values, 158730 total values, 0 missing values, insights: Diverse death cities.
+    nameFirst: Text, 1967 unique values, 0 null values, 439373 total values, 0 missing values, insights: Diverse first names.
+    nameLast: Text, 8713 unique values, 0 null values, 439424 total values, 0 missing values, insights: Diverse last names.
+    nameNote: Text, 447 unique values, 0 null values, 12178 total values, 0 missing values, insights: Various notes on names.
+    nameGiven: Text, 10732 unique values, 0 null values, 420509 total values, 0 missing values, insights: Diverse given names.
+    nameNick: Text, 1773 unique values, 0 null values, 103218 total values, 0 missing values, insights: Diverse nicknames.
+    weight: Numeric, 126 unique values, 0 null values, 437200 total values, 0 missing values, insights: Weight ranges from 65 to 320, with a mean of 189.78.
+    height: Numeric, 22 unique values, 0 null values, 437400 total values, 0 missing values, insights: Height ranges from 43 to 83, with a mean of 73.18.
+    bats: Categorical, 3 unique values, 0 null values, 435249 total values, 0 missing values, insights: Limited distinct values indicating few batting styles.
+    throws: Categorical, 2 unique values, 0 null values, 437139 total values, 0 missing values, insights: Limited distinct values indicating few throwing styles.
+    debut: DateTime, 8853 unique values, 0 null values, 439421 total values, 0 missing values, insights: Range from 1871-05-04 to 2005-09-28.
+    finalGame: DateTime, 8181 unique values, 0 null values, 391969 total values, 0 missing values, insights: Range from 1871-05-05 to 2008-09-29.
+
+Table: salaries
+    yearID: Numeric, 28 unique values, 0 null values, 23111 total values, 0 missing values, insights: Range from 1985 to 2012, with a mean of 1998.92.
+    teamID: Categorical, 35 unique values, 0 null values, 23111 total values, 0 missing values, insights: Diverse team representation.
+    lgID: Categorical, 2 unique values, 0 null values, 23111 total values, 0 missing values, insights: Represents two leagues.
+    playerID: Text, 4503 unique values, 0 null values, 23111 total values, 0 missing values, insights: Diverse player representation.
+    salary: Numeric, 2872 unique values, 0 null values, 23111 total values, 0 missing values, insights: Salary ranges from 0 to 33,000,000, with a mean of 1,798,584.97.
+
+Table: schools
+    schoolID: Text, 749 unique values, 0 null values, 749 total values, 0 missing values, insights: Unique school identifiers.
+    schoolName: Text, 746 unique values, 0 null values, 749 total values, 0 missing values, insights: Diverse school names.
+    schoolCity: Text, 560 unique values, 0 null values, 749 total values, 0 missing values, insights: Diverse school cities.
+    schoolState: Categorical, 49 unique values, 0 null values, 749 total values, 0 missing values, insights: Diverse school states.
+    schoolNick: Text, 333 unique values, 0 null values, 744 total values, 0 missing values, insights: Diverse school nicknames.
+
+Here is the summarized output based on the provided profiler report:
+
+### Table: schoolsplayers
+- **playerID**: Text, 5392 unique values, 0 null values, 5679 total values, insights: High cardinality, not unique.
+- **schoolID**: Text, 696 unique values, 0 null values, 5679 total values, insights: Low cardinality, not unique.
+- **yearMin**: Numeric, 140 unique values, 0 null values, 5679 total values, insights: Wide range (0-2006), highly skewed distribution.
+- **yearMax**: Numeric, 137 unique values, 0 null values, 5679 total values, insights: Wide range (0-2007), highly skewed distribution.
+
+### Table: seriespost
+- **yearID**: Numeric, 108 unique values, 0 null values, 272 total values, insights: Moderate cardinality, not unique.
+- **round**: Categorical, 13 unique values, 0 null values, 272 total values, insights: Low cardinality, not unique.
+- **teamIDwinner**: Categorical, 38 unique values, 0 null values, 272 total values, insights: Low cardinality, not unique.
+- **lgIDwinner**: Categorical, 2 unique values, 0 null values, 272 total values, insights: Very low cardinality, not unique.
+- **teamIDloser**: Categorical, 40 unique values, 0 null values, 272 total values, insights: Low cardinality, not unique.
+- **lgIDloser**: Categorical, 2 unique values, 0 null values, 272 total values, insights: Very low cardinality, not unique.
+- **wins**: Categorical, 4 unique values, 0 null values, 272 total values, insights: Very low cardinality, not unique.
+- **losses**: Categorical, 4 unique values, 0 null values, 272 total values, insights: Very low cardinality, not unique.
+- **ties**: Categorical, 1 unique value, 0 null values, 272 total values, insights: Constant value.
+
+### Table: teams
+- **yearID**: Numeric, 142 unique values, 0 null values, 2715 total values, insights: Wide range (1871-2012), moderate skewness.
+- **lgID**: Categorical, 7 unique values, 0 null values, 2715 total values, insights: Low cardinality, not unique.
+- **teamID**: Text, 149 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **franchID**: Text, 120 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **divID**: Categorical, 3 unique values, 0 null values, 1198 total values, insights: Low cardinality, not unique.
+- **Rank**: Numeric, 13 unique values, 0 null values, 2715 total values, insights: Moderate cardinality, not unique.
+- **G**: Numeric, 122 unique values, 0 null values, 2715 total values, insights: Wide range (6-165), moderate skewness.
+- **Ghome**: Numeric, 38 unique values, 0 null values, 2166 total values, insights: Low cardinality, not unique.
+- **W**: Numeric, 112 unique values, 0 null values, 2715 total values, insights: Wide range (0-116), moderate skewness.
+- **L**: Numeric, 113 unique values, 0 null values, 2715 total values, insights: Wide range (4-134), moderate skewness.
+- **AB**: Numeric, 1095 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **H**: Numeric, 729 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **2B**: Numeric, 311 unique values, 0 null values, 2715 total values, insights: Moderate cardinality, not unique.
+- **3B**: Numeric, 122 unique values, 0 null values, 2715 total values, insights: Moderate cardinality, not unique.
+- **HR**: Numeric, 245 unique values, 0 null values, 2715 total values, insights: Moderate cardinality, not unique.
+- **BB**: Numeric, 566 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **SO**: Numeric, 981 unique values, 0 null values, 2595 total values, insights: High cardinality, not unique.
+- **SB**: Numeric, 323 unique values, 0 null values, 2571 total values, insights: Moderate cardinality, not unique.
+- **CS**: Numeric, 138 unique values, 0 null values, 1856 total values, insights: Moderate cardinality, not unique.
+- **HBP**: Numeric, 61 unique values, 0 null values, 390 total values, insights: Moderate cardinality, not unique.
+- **SF**: Numeric, 43 unique values, 0 null values, 390 total values, insights: Low cardinality, not unique.
+- **RA**: Numeric, 607 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **ER**: Numeric, 629 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **ERA**: Numeric, 7 unique values, 0 null values, 2715 total values, insights: Low cardinality, not unique.
+- **CG**: Numeric, 147 unique values, 0 null values, 2715 total values, insights: Moderate cardinality, not unique.
+- **SHO**: Numeric, 32 unique values, 0 null values, 2715 total values, insights: Low cardinality, not unique.
+- **SV**: Numeric, 65 unique values, 0 null values, 2715 total values, insights: Moderate cardinality, not unique.
+- **IPouts**: Numeric, 629 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **HA**: Numeric, 743 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **HRA**: Numeric, 232 unique values, 0 null values, 2715 total values, insights: Moderate cardinality, not unique.
+- **BBA**: Numeric, 566 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **BPF**: Numeric, 42 unique values, 0 null values, 2715 total values, insights: Low cardinality, not unique.
+- **PPF**: Numeric, 42 unique values, 0 null values, 2715 total values, insights: Low cardinality, not unique.
+- **teamIDBR**: Text, 101 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **teamIDlahman45**: Text, 148 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+- **teamIDretro**: Text, 149 unique values, 0 null values, 2715 total values, insights: High cardinality, not unique.
+
+### Table: teamsfranchises
+- **franchID**: Text, 120 unique values, 0 null values, 120 total values, insights: Unique values, not null.
+- **franchName**: Text, 99 unique values, 0 null values, 120 total values, insights: High cardinality, not unique.
+- **active**: Categorical, 3 unique values, 0 null values, 120 total values, insights: Low cardinality, not unique.
+- **NAassoc**: Text, 12 unique values, 0 null values, 12 total values, insights: Unique values, not null.
+
+### Table: teamshalf
+- **yearID**: Categorical, 1 unique value, 0 null values, 52 total values, insights: Constant value.
+- **lgID**: Categorical, 2 unique values, 0 null values, 52 total values, insights: Low cardinality, not unique.
+- **teamID**: Text, 26 unique values, 0 null values, 52 total values, insights: Moderate cardinality, not unique.
+- **Half**: Categorical, 2 unique values, 0 null values, 52 total values, insights: Low cardinality, not unique.
+- **divID**: Categorical, 2 unique values, 0 null values, 52 total values, insights: Low cardinality, not unique.
+- **DivWin**: Boolean, 1 unique value, 0 null values, 52 total values, insights: Constant value.
+- **Rank**: Numeric, 7 unique values, 0 null values, 52 total values, insights: Moderate cardinality, not unique.
+- **G**: Numeric, 13 unique values, 0 null values, 52 total values, insights: Moderate cardinality, not unique.
+- **W**: Numeric, 20 unique values, 0 null values, 52 total values, insights: Moderate cardinality, not unique.
+- **L**: Numeric, 18 unique values, 0 null values, 52 total values, insights: Moderate cardinality, not unique.
+
+This summary captures all tables and their respective columns, including key details as requested.
