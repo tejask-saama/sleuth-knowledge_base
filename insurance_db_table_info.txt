@@ -1,0 +1,585 @@
+**Table: BRKR**: Contains information about brokers, including their names, firms, contact details, and specialties.
+
+- **Columns (Exact Names):**
+  - **`BRKR_ID`** (INTEGER):
+    ├── Business Meaning: Unique identifier for each broker
+    └── Value Profile:
+       ├── Cardinality: 200 (unique brokers)
+       ├── Value Distribution: Uniformly distributed
+       └── Null%: 0%
+  
+  - **`BRKR_NM`** (TEXT):
+    ├── Business Meaning: Name of the broker
+    └── Value Profile:
+       ├── Cardinality: 199 (high diversity)
+       ├── Value Distribution: Nearly unique names
+       └── Null%: 0%
+
+  - **`BRKR_FIRM`** (TEXT):
+    ├── Business Meaning: Firm associated with the broker
+    └── Value Profile:
+       ├── Cardinality: 199 (high diversity)
+       ├── Value Distribution: Similar to broker names
+       └── Null%: 0%
+
+  - **`BRKR_CONTACT`** (INTEGER):
+    ├── Business Meaning: Contact number for the broker
+    └── Value Profile:
+       ├── Cardinality: 200 (unique contacts)
+       ├── Value Distribution: Slight negative skew
+       └── Null%: 0%
+
+  - **`BRKR_RG`** (CATEGORICAL):
+    ├── Business Meaning: Category of the broker
+    └── Value Profile:
+       ├── Cardinality: 4 (low diversity)
+       └── Null%: 0%
+
+  - **`BRKR_EMAIL`** (TEXT):
+    ├── Business Meaning: Email address of the broker
+    └── Value Profile:
+       ├── Cardinality: 200 (unique emails)
+       └── Null%: 0%
+
+  - **`BRKR_LIC`** (INTEGER):
+    ├── Business Meaning: License number of the broker
+    └── Value Profile:
+       ├── Cardinality: 200 (unique licenses)
+       ├── Value Distribution: Slight positive skew
+       └── Null%: 0%
+
+  - **`BRKR_DT`** (DATETIME):
+    ├── Business Meaning: Date of birth or registration of the broker
+    └── Value Profile:
+       ├── Cardinality: 196 (wide date range)
+       └── Null%: 0%
+
+  - **`BRKR_SPCL`** (CATEGORICAL):
+    ├── Business Meaning: Specialty of the broker
+    └── Value Profile:
+       ├── Cardinality: 5 (low diversity)
+       └── Null%: 0%
+
+**Table: ADJ**: Contains information about adjusters, including their names, contact details, and specialties.
+
+- **Columns (Exact Names):**
+  - **`ADJ_ID`** (INTEGER):
+    ├── Business Meaning: Unique identifier for each adjuster
+    └── Value Profile:
+       ├── Cardinality: 50 (unique adjusters)
+       └── Null%: 0%
+
+  - **`ADJ_NM`** (TEXT):
+    ├── Business Meaning: Name of the adjuster
+    └── Value Profile:
+       ├── Cardinality: 50 (high diversity)
+       └── Null%: 0%
+
+  - **`ADJ_CONTACT`** (TEXT):
+    ├── Business Meaning: Contact number for the adjuster
+    └── Value Profile:
+       ├── Cardinality: 50 (unique contacts)
+       ├── Value Distribution: Slight positive skew
+       └── Null%: 0%
+
+  - **`ADJ_SPCL`** (CATEGORICAL):
+    ├── Business Meaning: Specialty of the adjuster
+    └── Value Profile:
+       ├── Cardinality: 3 (low diversity)
+       └── Null%: 0%
+
+**Table: LOC**: Contains information about locations, including addresses, cities, states, and other characteristics.
+
+- **Columns (Exact Names):**
+  - **`LOC_ID`** (INTEGER):
+    ├── Business Meaning: Unique identifier for each location
+    └── Value Profile:
+       ├── Cardinality: 500 (unique locations)
+       └── Null%: 0%
+
+  - **`LOC_ADDR`** (TEXT):
+    ├── Business Meaning: Address of the location
+    └── Value Profile:
+       ├── Cardinality: 500 (high diversity)
+       └── Null%: 0%
+
+  - **`LOC_CITY`** (TEXT):
+    ├── Business Meaning: City where the location is situated
+    └── Value Profile:
+       ├── Cardinality: 493 (high diversity)
+       └── Null%: 0%
+
+  - **`LOC_STATE`** (CATEGORICAL):
+    ├── Business Meaning: State where the location is situated
+    └── Value Profile:
+       ├── Cardinality: 5 (low diversity)
+       └── Null%: 0%
+
+  - **`LOC_ZIP`** (INTEGER):
+    ├── Business Meaning: ZIP code of the location
+    └── Value Profile:
+       ├── Cardinality: 488 (high diversity)
+       └── Null%: 0%
+
+  - **`LOC_BTYPE`** (CATEGORICAL):
+    ├── Business Meaning: Building type of the location
+    └── Value Profile:
+       ├── Cardinality: 4 (low diversity)
+       └── Null%: 0%
+
+  - **`LOC_SQFT`** (INTEGER):
+    ├── Business Meaning: Square footage of the location
+    └── Value Profile:
+       ├── Cardinality: 496 (high diversity)
+       └── Null%: 0%
+
+  - **`LOC_CY`** (INTEGER):
+    ├── Business Meaning: Year of construction or establishment
+    └── Value Profile:
+       ├── Cardinality: 71 (low variability)
+       └── Null%: 0%
+
+  - **`LOC_FIRE`** (CATEGORICAL):
+    ├── Business Meaning: Fire safety status of the location
+    └── Value Profile:
+       ├── Cardinality: 2 (very low diversity)
+       └── Null%: 0%
+
+  - **`LOC_SEC`** (CATEGORICAL):
+    ├── Business Meaning: Security status of the location
+    └── Value Profile:
+       ├── Cardinality: 2 (very low diversity)
+       └── Null%: 0%
+
+**Table: INS**: Contains information about insurance companies, including their names, types, and revenue.
+
+- **Columns (Exact Names):**
+  - **`INS_ID`** (INTEGER):
+    ├── Business Meaning: Unique identifier for each insurance company
+    └── Value Profile:
+       ├── Cardinality: 1000 (unique companies)
+       └── Null%: 0%
+
+  - **`INS_NM`** (TEXT):
+    ├── Business Meaning: Name of the insurance company
+    └── Value Profile:
+       ├── Cardinality: 976 (high diversity)
+       └── Null%: 0%
+
+  - **`INS_TYPE`** (CATEGORICAL):
+    ├── Business Meaning: Type of insurance provided
+    └── Value Profile:
+       ├── Cardinality: 3 (very low diversity)
+       └── Null%: 0%
+
+  - **`INS_LOC`** (INTEGER):
+    ├── Business Meaning: Location identifier for the insurance company
+    └── Value Profile:
+       ├── Cardinality: 427 (high diversity)
+       └── Null%: 0%
+
+  - **`INS_CONTACT`** (TEXT):
+    ├── Business Meaning: Contact information for the insurance company
+    └── Value Profile:
+       ├── Cardinality: 992 (high diversity)
+       └── Null%: 0%
+
+  - **`INS_PHONE`** (INTEGER):
+    ├── Business Meaning: Phone number for the insurance company
+    └── Value Profile:
+       ├── Cardinality: 1000 (unique phone numbers)
+       ├── Value Distribution: Slight positive skew
+       └── Null%: 0%
+
+  - **`INS_DESC`** (TEXT):
+    ├── Business Meaning: Description of the insurance services offered
+    └── Value Profile:
+       ├── Cardinality: 1000 (high diversity)
+       └── Null%: 0%
+
+  - **`INS_INDC`** (CATEGORICAL):
+    ├── Business Meaning: Indicator of the insurance type
+    └── Value Profile:
+       ├── Cardinality: 5 (low diversity)
+       └── Null%: 0%
+
+  - **`INS_REV`** (FLOAT):
+    ├── Business Meaning: Revenue generated by the insurance company
+    └── Value Profile:
+       ├── Cardinality: 1000 (unique revenue values)
+       ├── Value Distribution: Slight negative skew
+       └── Null%: 0%
+
+**Table: COV**: Contains information about coverage types and descriptions.
+
+- **Columns (Exact Names):**
+  - **`COV_ID`** (INTEGER):
+    ├── Business Meaning: Unique identifier for each coverage type
+    └── Value Profile:
+       ├── Cardinality: 5 (unique coverage types)
+       └── Null%: 0%
+
+  - **`COV_TYPE`** (TEXT):
+    ├── Business Meaning: Type of coverage provided
+    └── Value Profile:
+       ├── Cardinality: 5 (unique types)
+       └── Null%: 0%
+
+  - **`COV_DESC`** (TEXT):
+    ├── Business Meaning: Description of the coverage type
+    └── Value Profile:
+       ├── Cardinality: 5 (unique descriptions)
+       └── Null%: 0%
+
+**Table: PLC**: This table contains information about policies, including their identifiers, status, effective dates, and coverage limits.
+
+- **Columns (Exact Names):**
+  - **`PLC_ID`** (Numeric):
+    ├── Business Meaning: Unique identifier for each policy
+    └── Value Profile:
+       ├── Cardinality: 5000 (unique policies)
+       ├─── Value Distribution: Uniformly distributed
+       └─── Null%: 0%
+  
+  - **`PLC_NUM`** (Text):
+    ├── Business Meaning: Non-unique text identifier for policies
+    └── Value Profile:
+       ├── Cardinality: 3944 (unique identifiers)
+       ├─── Value Distribution: Non-unique distribution
+       └─── Null%: 0%
+
+  - **`INS_ID`** (Numeric):
+    ├── Business Meaning: Identifier for the insurance provider
+    └── Value Profile:
+       ├── Cardinality: 993 (unique providers)
+       ├─── Value Distribution: Slightly skewed
+       └─── Null%: 0%
+
+  - **`BRKR_ID`** (Numeric):
+    ├── Business Meaning: Identifier for the broker associated with the policy
+    └── Value Profile:
+       ├── Cardinality: 200 (unique brokers)
+       ├─── Value Distribution: Low diversity
+       └─── Null%: 0%
+
+  - **`PLC_EFF`** (DateTime):
+    ├── Business Meaning: Effective date of the policy
+    └── Value Profile:
+       ├── Cardinality: 1710 (unique effective dates)
+       ├─── Value Distribution: Range from 2018 to 2022
+       └─── Null%: 0%
+
+  - **`PLC_EXP`** (DateTime):
+    ├── Business Meaning: Expiration date of the policy
+    └── Value Profile:
+       ├── Cardinality: 1968 (unique expiration dates)
+       ├─── Value Distribution: Future dates from 2023 to 2028
+       └─── Null%: 0%
+
+  - **`PLC_COVLMT`** (Numeric):
+    ├── Business Meaning: Coverage limit of the policy
+    └── Value Profile:
+       ├── Cardinality: 5000 (unique coverage limits)
+       ├─── Value Distribution: Wide range of values
+       └─── Null%: 0%
+
+  - **`PLC_PREM`** (Numeric):
+    ├── Business Meaning: Premium amount for the policy
+    └── Value Profile:
+       ├── Cardinality: 4998 (unique premium amounts)
+       ├─── Value Distribution: High uniqueness
+       └─── Null%: 0%
+
+  - **`PLC_DIV`** (Categorical):
+    ├── Business Meaning: Division category of the policy
+    └── Value Profile:
+       ├── Cardinality: 5 (unique divisions)
+       ├─── Value Distribution: Low diversity
+       └─── Null%: 0%
+
+  - **`PLC_SRC`** (Categorical):
+    ├── Business Meaning: Source category of the policy
+    └── Value Profile:
+       ├── Cardinality: 3 (unique sources)
+       ├─── Value Distribution: Very limited categories
+       └─── Null%: 0%
+
+  - **`PLC_PROG`** (Categorical):
+    ├── Business Meaning: Program category of the policy
+    └── Value Profile:
+       ├── Cardinality: 3 (unique programs)
+       ├─── Value Distribution: Limited categories
+       └─── Null%: 0%
+
+  - **`PLC_ISSUE`** (Categorical):
+    ├── Business Meaning: Issue category of the policy
+    └── Value Profile:
+       ├── Cardinality: 2 (unique issues)
+       ├─── Value Distribution: Very few categories
+       └─── Null%: 0%
+
+  - **`PLC_STAT`** (Categorical):
+    ├── Business Meaning: Status of the policy
+    └── Value Profile:
+       ├── Cardinality: 3 (unique statuses)
+       ├─── Value Distribution: Limited status categories
+       └─── Null%: 0%
+
+  - **`PLC_UNDNT`** (Text):
+    ├── Business Meaning: Unique text identifier for the policy
+    └── Value Profile:
+       ├── Cardinality: 5000 (unique identifiers)
+       ├─── Value Distribution: Uniformly distributed
+       └─── Null%: 0%
+
+  - **`PLC_RENEW`** (DateTime):
+    ├── Business Meaning: Renewal date of the policy
+    └── Value Profile:
+       ├── Cardinality: 966 (unique renewal dates)
+       ├─── Value Distribution: Range from 2022 to 2024
+       └─── Null%: 50.5%
+
+**Table: PLC_COV**: This table contains information about policy coverages, including limits and effective dates.
+
+- **Columns (Exact Names):**
+  - **`PLC_COV_ID`** (Numeric):
+    ├── Business Meaning: Unique identifier for each coverage
+    └── Value Profile:
+       ├── Cardinality: 6000 (unique coverages)
+       ├─── Value Distribution: Uniformly distributed
+       └─── Null%: 0%
+
+  - **`PLC_ID`** (Numeric):
+    ├── Business Meaning: Identifier for the associated policy
+    └── Value Profile:
+       ├── Cardinality: 3493 (unique policies)
+       ├─── Value Distribution: High uniqueness
+       └─── Null%: 0%
+
+  - **`COV_ID`** (Categorical):
+    ├── Business Meaning: Identifier for the type of coverage
+    └── Value Profile:
+       ├── Cardinality: 5 (unique coverage types)
+       ├─── Value Distribution: Low diversity
+       └─── Null%: 0%
+
+  - **`PLC_COVLMT`** (Numeric):
+    ├── Business Meaning: Coverage limit amount
+    └── Value Profile:
+       ├── Cardinality: 6000 (unique coverage limits)
+       ├─── Value Distribution: Wide range of values
+       └─── Null%: 0%
+
+  - **`PLC_COV_EFF`** (DateTime):
+    ├── Business Meaning: Effective date of the coverage
+    └── Value Profile:
+       ├── Cardinality: 1756 (unique effective dates)
+       ├─── Value Distribution: Range from 2018 to 2022
+       └─── Null%: 0%
+
+  - **`PLC_COV_EXP`** (DateTime):
+    ├── Business Meaning: Expiration date of the coverage
+    └── Value Profile:
+       ├── Cardinality: 2045 (unique expiration dates)
+       ├─── Value Distribution: Future dates from 2023 to 2028
+       └─── Null%: 0%
+
+**Table: SUR**: This table contains information about surcharges applied to policies, including types and amounts.
+
+- **Columns (Exact Names):**
+  - **`SUR_ID`** (Numeric):
+    ├── Business Meaning: Unique identifier for each surcharge
+    └── Value Profile:
+       ├── Cardinality: 1000 (unique surcharges)
+       ├─── Value Distribution: Uniformly distributed
+       └─── Null%: 0%
+
+  - **`PLC_ID`** (Numeric):
+    ├── Business Meaning: Identifier for the associated policy
+    └── Value Profile:
+       ├── Cardinality: 912 (unique policies)
+       ├─── Value Distribution: High uniqueness
+       └─── Null%: 0%
+
+  - **`SUR_TYPE`** (Categorical):
+    ├── Business Meaning: Type of surcharge applied
+    └── Value Profile:
+       ├── Cardinality: 3 (unique surcharge types)
+       ├─── Value Distribution: Very limited categories
+       └─── Null%: 0%
+
+  - **`SUR_AMT`** (Numeric):
+    ├── Business Meaning: Amount of the surcharge
+    └── Value Profile:
+       ├── Cardinality: 995 (unique surcharge amounts)
+       ├─── Value Distribution: High uniqueness
+       └─── Null%: 0%
+
+  - **`SUR_DESC`** (Categorical):
+    ├── Business Meaning: Description of the surcharge
+    └── Value Profile:
+       ├── Cardinality: 3 (unique descriptions)
+       ├─── Value Distribution: Very limited categories
+       └─── Null%: 0%
+
+**Table: FEE**: This table contains information about fees associated with policies, including types and amounts.
+
+- **Columns (Exact Names):**
+  - **`FEE_ID`** (Numeric):
+    ├── Business Meaning: Unique identifier for each fee
+    └── Value Profile:
+       ├── Cardinality: 800 (unique fees)
+       ├─── Value Distribution: Uniformly distributed
+       └─── Null%: 0%
+
+  - **`PLC_ID`** (Numeric):
+    ├── Business Meaning: Identifier for the associated policy
+    └── Value Profile:
+       ├── Cardinality: 746 (unique policies)
+       ├─── Value Distribution: High uniqueness
+       └─── Null%: 0%
+
+  - **`FEE_TYPE`** (Categorical):
+    ├── Business Meaning: Type of fee applied
+    └── Value Profile:
+       ├── Cardinality: 3 (unique fee types)
+       ├─── Value Distribution: Very limited categories
+       └─── Null%: 0%
+
+  - **`FEE_AMT`** (Numeric):
+    ├── Business Meaning: Amount of the fee
+    └── Value Profile:
+       ├── Cardinality: 793 (unique fee amounts)
+       ├─── Value Distribution: High uniqueness
+       └─── Null%: 0%
+
+  - **`FEE_DESC`** (Categorical):
+    ├── Business Meaning: Description of the fee
+    └── Value Profile:
+       ├── Cardinality: 3 (unique descriptions)
+       ├─── Value Distribution: Very limited categories
+       └─── Null%: 0%
+
+**Table: DISC**: This table contains information about discounts applied to policies, including types and amounts.
+
+- **Columns (Exact Names):**
+  - **`DISC_ID`** (Numeric):
+    ├── Business Meaning: Unique identifier for each discount
+    └── Value Profile:
+       ├── Cardinality: 800 (unique discounts)
+       ├─── Value Distribution: Uniformly distributed
+       └─── Null%: 0%
+
+  - **`PLC_ID`** (Numeric):
+    ├── Business Meaning: Identifier for the associated policy
+    └── Value Profile:
+       ├── Cardinality: 737 (unique policies)
+       ├─── Value Distribution: High uniqueness
+       └─── Null%: 0%
+
+  - **`DISC_TYPE`** (Categorical):
+    ├── Business Meaning: Type of discount applied
+    └── Value Profile:
+       ├── Cardinality: 3 (unique discount types)
+       ├─── Value Distribution: Very limited categories
+       └─── Null%: 0%
+
+  - **`DISC_AMT`** (Numeric):
+    ├── Business Meaning: Amount of the discount
+    └── Value Profile:
+       ├── Cardinality: 792 (unique discount amounts)
+       ├─── Value Distribution: High uniqueness
+       └─── Null%: 0%
+
+  - **`DISC_DESC`** (Categorical):
+    ├── Business Meaning: Description of the discount
+    └── Value Profile:
+       ├── Cardinality: 3 (unique descriptions)
+       ├─── Value Distribution: Very limited categories
+       └─── Null%: 0%
+
+**Table: CLM**: Contains information about insurance claims, including identifiers, amounts, statuses, and dates related to claims processing.
+
+- **Columns (Exact Names):**
+  - **`CLM_ID`** (Numeric):
+    ├── Business Meaning: Unique identifier for claims
+    └── Value Profile:
+       ├── Cardinality: 10000 (unique claims)
+       ├── Value Distribution: Evenly distributed with a mean of 5000.5
+       └── Null%: 0%
+
+  - **`PLC_ID`** (Numeric):
+    ├── Business Meaning: Represents policy IDs associated with claims
+    └── Value Profile:
+       ├── Cardinality: 4342 (unique policies)
+       ├── Value Distribution: Slightly skewed distribution with a mean of 2525.68
+       └── Null%: 0%
+
+  - **`CLM_NUM`** (Text):
+    ├── Business Meaning: Claim numbers for tracking purposes
+    └── Value Profile:
+       ├── Cardinality: 6361 (unique claim numbers)
+       ├── Value Distribution: Diverse but not unique
+       └── Null%: 0%
+
+  - **`CLM_DT`** (DateTime):
+    ├── Business Meaning: Date when the claim was created
+    └── Value Profile:
+       ├── Cardinality: 1819 (unique dates)
+       ├── Value Distribution: Dates range from 2020-01-01 to 2024-12-30
+       └── Null%: 0%
+
+  - **`LOSS_TYPE`** (Categorical):
+    ├── Business Meaning: Type of loss associated with the claim
+    └── Value Profile:
+       ├── Cardinality: 5 (unique loss types)
+       ├── Value Distribution: Limited categories for loss types
+       └── Null%: 0%
+
+  - **`CLM_AMT`** (Numeric):
+    ├── Business Meaning: Amount claimed in the insurance claim
+    └── Value Profile:
+       ├── Cardinality: 9990 (unique claim amounts)
+       ├── Value Distribution: Varies significantly with a mean of 27344.62
+       └── Null%: 0%
+
+  - **`CLM_STAT`** (Categorical):
+    ├── Business Meaning: Current status of the claim
+    └── Value Profile:
+       ├── Cardinality: 4 (unique statuses)
+       ├── Value Distribution: Limited to four categories
+       └── Null%: 0%
+
+  - **`LOSS_DESC`** (Categorical):
+    ├── Business Meaning: Description of the loss incurred
+    └── Value Profile:
+       ├── Cardinality: 5 (unique descriptions)
+       ├── Value Distribution: Limited descriptions indicating potential redundancy
+       └── Null%: 0%
+
+  - **`CLM_RPT`** (DateTime):
+    ├── Business Meaning: Date when the claim was reported
+    └── Value Profile:
+       ├── Cardinality: 9997 (unique report dates)
+       ├── Value Distribution: Dates range from 2024-02-16 to 2025-02-15
+       └── Null%: 0%
+
+  - **`CLM_CLOSE`** (DateTime):
+    ├── Business Meaning: Date when the claim was closed
+    └── Value Profile:
+       ├── Cardinality: 1712 (unique close dates)
+       ├── Value Distribution: Dates range from 2020-01-02 to 2024-12-30
+       └── Null%: 49.22%
+
+  - **`ADJ_ID`** (Numeric):
+    ├── Business Meaning: Identifier for adjustments made to claims
+    └── Value Profile:
+       ├── Cardinality: 50 (unique adjustment IDs)
+       ├── Value Distribution: Limited adjustment IDs indicating potential for categorization
+       └── Null%: 0%
+
+- **Table Metadata:**
+  ├── Estimated Row Count: 10000
+  ├── Storage Characteristics:
+  │   └── Compression Potential: High
+  └── Data Quality Flags: [No Missing Values, Unique Identifiers]

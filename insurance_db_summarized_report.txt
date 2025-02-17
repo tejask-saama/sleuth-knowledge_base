@@ -1,0 +1,105 @@
+Table: BRKR
+    BRKR_ID: Numeric, 200 unique values, 0 null values, 200 total values, no missing values, insights: Unique identifier with a uniform distribution.
+    BRKR_NM: Text, 199 unique values, 0 null values, 200 total values, no missing values, insights: Nearly unique names with high diversity.
+    BRKR_FIRM: Text, 199 unique values, 0 null values, 200 total values, no missing values, insights: Similar to BRKR_NM, indicating diverse firms.
+    BRKR_CONTACT: Numeric, 200 unique values, 0 null values, 200 total values, no missing values, insights: Unique contact numbers with a slight negative skew.
+    BRKR_RG: Categorical, 4 unique values, 0 null values, 200 total values, no missing values, insights: Low diversity in categories.
+    BRKR_EMAIL: Text, 200 unique values, 0 null values, 200 total values, no missing values, insights: All unique email addresses.
+    BRKR_LIC: Numeric, 200 unique values, 0 null values, 200 total values, no missing values, insights: Unique license numbers with a slight positive skew.
+    BRKR_DT: DateTime, 196 unique values, 0 null values, 200 total values, no missing values, insights: Wide date range with a slight concentration in certain years.
+    BRKR_SPCL: Categorical, 5 unique values, 0 null values, 200 total values, no missing values, insights: Low diversity in special categories.
+
+Table: ADJ
+    ADJ_ID: Numeric, 50 unique values, 0 null values, 50 total values, no missing values, insights: Unique identifiers with a uniform distribution.
+    ADJ_NM: Text, 50 unique values, 0 null values, 50 total values, no missing values, insights: All unique names indicating high diversity.
+    ADJ_CONTACT: Numeric, 50 unique values, 0 null values, 50 total values, no missing values, insights: Unique contact numbers with a slight positive skew.
+    ADJ_SPCL: Categorical, 3 unique values, 0 null values, 50 total values, no missing values, insights: Low diversity in special categories.
+
+Table: LOC
+    LOC_ID: Numeric, 500 unique values, 0 null values, 500 total values, no missing values, insights: Unique identifiers with a uniform distribution.
+    LOC_ADDR: Text, 500 unique values, 0 null values, 500 total values, no missing values, insights: All unique addresses indicating high diversity.
+    LOC_CITY: Text, 493 unique values, 0 null values, 500 total values, no missing values, insights: High diversity in city names.
+    LOC_STATE: Categorical, 5 unique values, 0 null values, 500 total values, no missing values, insights: Low diversity in state categories.
+    LOC_ZIP: Numeric, 488 unique values, 0 null values, 500 total values, no missing values, insights: High diversity in ZIP codes with a slight negative skew.
+    LOC_BTYPE: Categorical, 4 unique values, 0 null values, 500 total values, no missing values, insights: Low diversity in building types.
+    LOC_SQFT: Numeric, 496 unique values, 0 null values, 500 total values, no missing values, insights: High diversity in square footage with a slight negative skew.
+    LOC_CY: Numeric, 71 unique values, 0 null values, 500 total values, no missing values, insights: Year data with low variability.
+    LOC_FIRE: Categorical, 2 unique values, 0 null values, 500 total values, no missing values, insights: Very low diversity in fire categories.
+    LOC_SEC: Categorical, 2 unique values, 0 null values, 500 total values, no missing values, insights: Very low diversity in security categories.
+
+Table: INS
+    INS_ID: Numeric, 1000 unique values, 0 null values, 1000 total values, no missing values, insights: Unique identifiers with a uniform distribution.
+    INS_NM: Text, 976 unique values, 0 null values, 1000 total values, no missing values, insights: High diversity in insurance names.
+    INS_TYPE: Categorical, 3 unique values, 0 null values, 1000 total values, no missing values, insights: Very low diversity in insurance types.
+    INS_LOC: Numeric, 427 unique values, 0 null values, 1000 total values, no missing values, insights: High diversity in location identifiers.
+    INS_CONTACT: Text, 992 unique values, 0 null values, 1000 total values, no missing values, insights: High diversity in contact information.
+    INS_PHONE: Numeric, 1000 unique values, 0 null values, 1000 total values, no missing values, insights: Unique phone numbers with a slight positive skew.
+    INS_DESC: Text, 1000 unique values, 0 null values, 1000 total values, no missing values, insights: All unique descriptions indicating high diversity.
+    INS_INDC: Categorical, 5 unique values, 0 null values, 1000 total values, no missing values, insights: Low diversity in indicator categories.
+    INS_REV: Numeric, 1000 unique values, 0 null values, 1000 total values, no missing values, insights: Unique revenue values with a slight negative skew.
+
+Table: COV
+    COV_ID: Categorical, 5 unique values, 0 null values, 5 total values, no missing values, insights: All unique identifiers indicating high diversity.
+    COV_TYPE: Text, 5 unique values, 0 null values, 5 total values, no missing values, insights: All unique types indicating high diversity.
+    COV_DESC: Text, 5 unique values, 0 null values, 5 total values, no missing values, insights: All unique descriptions indicating high diversity.
+
+Table: PLC
+    PLC_ID: Numeric, 5000 unique values, 0 null values, 5000 total values, no missing values, Insights: Unique identifier with a uniform distribution.
+    PLC_NUM: Text, 3944 unique values, 0 null values, 5000 total values, no missing values, Insights: Non-unique text identifier.
+    INS_ID: Numeric, 993 unique values, 0 null values, 5000 total values, no missing values, Insights: Numeric identifier with a slight skew.
+    BRKR_ID: Numeric, 200 unique values, 0 null values, 5000 total values, no missing values, Insights: Low unique values indicating potential grouping.
+    PLC_EFF: DateTime, 1710 unique values, 0 null values, 5000 total values, no missing values, Insights: Date range from 2018 to 2022.
+    PLC_EXP: DateTime, 1968 unique values, 0 null values, 5000 total values, no missing values, Insights: Future date range from 2023 to 2028.
+    PLC_COVLMT: Numeric, 5000 unique values, 0 null values, 5000 total values, no missing values, Insights: Unique numeric values with a wide range.
+    PLC_PREM: Numeric, 4998 unique values, 0 null values, 5000 total values, no missing values, Insights: High uniqueness with a significant range.
+    PLC_DIV: Categorical, 5 unique values, 0 null values, 5000 total values, no missing values, Insights: Low diversity in categories.
+    PLC_SRC: Categorical, 3 unique values, 0 null values, 5000 total values, no missing values, Insights: Very limited source categories.
+    PLC_PROG: Categorical, 3 unique values, 0 null values, 5000 total values, no missing values, Insights: Limited program categories.
+    PLC_ISSUE: Categorical, 2 unique values, 0 null values, 5000 total values, no missing values, Insights: Very few issue categories.
+    PLC_STAT: Categorical, 3 unique values, 0 null values, 5000 total values, no missing values, Insights: Limited status categories.
+    PLC_UNDNT: Text, 5000 unique values, 0 null values, 5000 total values, no missing values, Insights: Unique text identifiers.
+    PLC_RENEW: DateTime, 966 unique values, 2525 null values, 2475 total values, no missing values, Insights: Date range from 2022 to 2024.
+
+Table: PLC_COV
+    PLC_COV_ID: Numeric, 6000 unique values, 0 null values, 6000 total values, no missing values, Insights: Unique identifier with a uniform distribution.
+    PLC_ID: Numeric, 3493 unique values, 0 null values, 6000 total values, no missing values, Insights: High uniqueness with a wide range.
+    COV_ID: Categorical, 5 unique values, 0 null values, 6000 total values, no missing values, Insights: Low diversity in categories.
+    PLC_COVLMT: Numeric, 6000 unique values, 0 null values, 6000 total values, no missing values, Insights: Unique numeric values with a wide range.
+    PLC_COV_EFF: DateTime, 1756 unique values, 0 null values, 6000 total values, no missing values, Insights: Date range from 2018 to 2022.
+    PLC_COV_EXP: DateTime, 2045 unique values, 0 null values, 6000 total values, no missing values, Insights: Future date range from 2023 to 2028.
+
+Table: SUR
+    SUR_ID: Numeric, 1000 unique values, 0 null values, 1000 total values, no missing values, Insights: Unique identifier with a uniform distribution.
+    PLC_ID: Numeric, 912 unique values, 0 null values, 1000 total values, no missing values, Insights: High uniqueness with a wide range.
+    SUR_TYPE: Categorical, 3 unique values, 0 null values, 1000 total values, no missing values, Insights: Very limited type categories.
+    SUR_AMT: Numeric, 995 unique values, 0 null values, 1000 total values, no missing values, Insights: High uniqueness with a significant range.
+    SUR_DESC: Categorical, 3 unique values, 0 null values, 1000 total values, no missing values, Insights: Very limited description categories.
+
+Table: FEE
+    FEE_ID: Numeric, 800 unique values, 0 null values, 800 total values, no missing values, Insights: Unique identifier with a uniform distribution.
+    PLC_ID: Numeric, 746 unique values, 0 null values, 800 total values, no missing values, Insights: High uniqueness with a wide range.
+    FEE_TYPE: Categorical, 3 unique values, 0 null values, 800 total values, no missing values, Insights: Very limited type categories.
+    FEE_AMT: Numeric, 793 unique values, 0 null values, 800 total values, no missing values, Insights: High uniqueness with a significant range.
+    FEE_DESC: Categorical, 3 unique values, 0 null values, 800 total values, no missing values, Insights: Very limited description categories.
+
+Table: DISC
+    DISC_ID: Numeric, 800 unique values, 0 null values, 800 total values, no missing values, Insights: Unique identifier with a uniform distribution.
+    PLC_ID: Numeric, 737 unique values, 0 null values, 800 total values, no missing values, Insights: High uniqueness with a wide range.
+    DISC_TYPE: Categorical, 3 unique values, 0 null values, 800 total values, no missing values, Insights: Very limited type categories.
+    DISC_AMT: Numeric, 792 unique values, 0 null values, 800 total values, no missing values, Insights: High uniqueness with a significant range.
+    DISC_DESC: Categorical, 3 unique values, 0 null values, 800 total values, no missing values, Insights: Very limited description categories.
+
+Table: CLM
+    CLM_ID: Numeric, 10000 unique values, 0 null values, 10000 total values, no missing values, Insights: Unique identifier for claims, evenly distributed with a mean of 5000.5.
+    PLC_ID: Numeric, 4342 unique values, 0 null values, 10000 total values, no missing values, Insights: Represents policy IDs, slightly skewed distribution with a mean of 2525.68.
+    CLM_NUM: Text, 6361 unique values, 0 null values, 10000 total values, no missing values, Insights: Claim numbers are diverse but not unique.
+    CLM_DT: DateTime, 1819 unique values, 0 null values, 10000 total values, no missing values, Insights: Dates range from 2020-01-01 to 2024-12-30, indicating a broad time span.
+    LOSS_TYPE: Categorical, 5 unique values, 0 null values, 10000 total values, no missing values, Insights: Limited categories for loss types, potential for further analysis.
+    CLM_AMT: Numeric, 9990 unique values, 0 null values, 10000 total values, no missing values, Insights: Claim amounts vary significantly with a mean of 27344.62.
+    CLM_STAT: Categorical, 4 unique values, 0 null values, 10000 total values, no missing values, Insights: Status of claims is limited to four categories.
+    LOSS_DESC: Categorical, 5 unique values, 0 null values, 10000 total values, no missing values, Insights: Descriptions of losses are limited, indicating potential redundancy.
+    CLM_RPT: DateTime, 9997 unique values, 0 null values, 10000 total values, no missing values, Insights: Report dates range from 2024-02-16 to 2025-02-15, indicating a future reporting period.
+    CLM_CLOSE: DateTime, 1712 unique values, 4922 null values, 5078 total values, Insights: Close dates range from 2020-01-02 to 2024-12-30, with many null values indicating unclosed claims.
+    ADJ_ID: Numeric, 50 unique values, 0 null values, 10000 total values, no missing values, Insights: Adjustment IDs are limited, indicating potential for categorization.
+
+This summary captures all the tables and their respective columns from the profiler report, detailing the datatype, unique values, null values, total values, missing values, and insights for each column.

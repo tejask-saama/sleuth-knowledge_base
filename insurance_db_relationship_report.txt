@@ -1,0 +1,54 @@
+### **Database Relationship Analysis Report**
+
+#### **1. Intra-table Relationships**
+
+| Table Name | Column A      | Column B      | Relationship Type      | Description                                           |
+|------------|---------------|---------------|------------------------|-------------------------------------------------------|
+| BRKR       | BRKR_ID      | BRKR_NM      | Unique Identifier      | Each broker has a unique identifier and name.        |
+| BRKR       | BRKR_ID      | BRKR_FIRM    | Unique Identifier      | Each broker is associated with a unique firm.        |
+| BRKR       | BRKR_ID      | BRKR_LIC     | Unique Identifier      | Each broker has a unique license number.              |
+| ADJ        | ADJ_ID       | ADJ_NM       | Unique Identifier      | Each adjuster has a unique identifier and name.      |
+| LOC        | LOC_ID       | LOC_ADDR      | Unique Identifier      | Each location has a unique identifier and address.   |
+| INS        | INS_ID       | INS_NM       | Unique Identifier      | Each insurance company has a unique identifier and name. |
+| PLC        | PLC_ID       | PLC_NUM      | Unique Identifier      | Each policy has a unique identifier and number.      |
+| COV        | COV_ID       | COV_TYPE     | Unique Identifier      | Each coverage type has a unique identifier and type. |
+| PLC_COV    | PLC_COV_ID   | PLC_ID       | Unique Identifier      | Each policy coverage has a unique identifier and is linked to a policy. |
+| SUR        | SUR_ID       | PLC_ID       | Unique Identifier      | Each surcharge has a unique identifier and is linked to a policy. |
+| FEE        | FEE_ID       | PLC_ID       | Unique Identifier      | Each fee has a unique identifier and is linked to a policy. |
+| DISC       | DISC_ID      | PLC_ID       | Unique Identifier      | Each discount has a unique identifier and is linked to a policy. |
+| CLM        | CLM_ID       | PLC_ID       | Unique Identifier      | Each claim has a unique identifier and is linked to a policy. |
+
+#### **2. Inter-table Relationships**
+
+| Table A    | Column A      | Table B    | Column B      | Relationship Type      | Description                                           |
+|------------|---------------|------------|---------------|------------------------|-------------------------------------------------------|
+| PLC        | INS_ID        | INS        | INS_ID        | Many-to-One            | Each policy is associated with one insurance company. |
+| PLC        | BRKR_ID       | BRKR       | BRKR_ID       | Many-to-One            | Each policy is associated with one broker.            |
+| PLC_COV    | PLC_ID        | PLC        | PLC_ID        | One-to-Many            | A policy can have multiple coverages.                 |
+| SUR        | PLC_ID        | PLC        | PLC_ID        | One-to-Many            | A policy can have multiple surcharges.                 |
+| FEE        | PLC_ID        | PLC        | PLC_ID        | One-to-Many            | A policy can have multiple fees.                       |
+| DISC       | PLC_ID        | PLC        | PLC_ID        | One-to-Many            | A policy can have multiple discounts.                  |
+| CLM        | PLC_ID        | PLC        | PLC_ID        | One-to-Many            | A policy can have multiple claims.                     |
+| CLM        | ADJ_ID        | ADJ        | ADJ_ID        | Many-to-One            | Each claim can be associated with one adjuster.       |
+
+#### **3. Table-level Relationships**
+
+| Table Name | Related Tables | Relationship Description                                   |
+|------------|----------------|-----------------------------------------------------------|
+| BRKR       | PLC            | Each broker can be associated with multiple policies.    |
+| ADJ        | CLM            | Each adjuster can handle multiple claims.                 |
+| LOC        | INS            | Each insurance company can be associated with multiple locations. |
+| INS        | PLC            | Each insurance company can provide multiple policies.     |
+| PLC        | PLC_COV, SUR, FEE, DISC, CLM | Each policy can have multiple coverages, surcharges, fees, discounts, and claims. |
+| PLC_COV    | COV            | Each policy coverage is linked to a specific coverage type. |
+| CLM        | ADJ            | Each claim can have adjustments made by an adjuster.     |
+
+### **Summary of Findings**
+
+- **Intra-table Relationships**: Each table has unique identifiers that ensure data integrity and uniqueness. For example, brokers, adjusters, locations, and insurance companies all have unique IDs that link to their respective attributes.
+  
+- **Inter-table Relationships**: The relationships between tables are primarily based on foreign keys. For instance, the `PLC` table links to the `INS` and `BRKR` tables, indicating that each policy is associated with one insurance company and one broker. The `CLM` table links back to the `PLC` table, showing that claims are tied to specific policies.
+
+- **Table-level Relationships**: The `PLC` table serves as a central hub connecting various aspects of the insurance process, including coverages, surcharges, fees, discounts, and claims. This structure allows for comprehensive tracking and management of insurance policies and their associated elements.
+
+This structured analysis provides a clear understanding of how the data elements within the database are interconnected, facilitating better data management and analysis strategies.

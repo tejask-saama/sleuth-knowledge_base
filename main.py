@@ -6,7 +6,7 @@ from helpers import (
     convert_tables_to_dataframe,
     filter_profile_report,
     chunk_dictionary,
-    create_summery,
+    create_summary,
     create_table_info,
     create_relationship_report,
     read_txt_file,
@@ -27,7 +27,7 @@ def process_batches(profile_batches, whole_batches):
     summarized_reports, knowledge_base_outputs = [], []
     
     for i, (profile_batch, whole_batch) in enumerate(zip(profile_batches, whole_batches)):
-        summarized_report = create_summery(profile_batch)
+        summarized_report = create_summary(profile_batch)
         summarized_reports.append(summarized_report)
         print(f"Batch {i+1}: Summarized Report Generated.")
 
@@ -45,11 +45,11 @@ def main():
         print("Database not specified. Exiting.")
         return
     
-    database_name = db_config['database']
-    dataframes = convert_tables_to_dataframe(db_config)
+    # database_name = db_config['database']
+    database_name = "insurance_db"
+    dataframes = convert_tables_to_dataframe("/home/tejas.kolhe/knowledge_base_chat/insurance_db (1).sqlite")
     filtered_report = filter_profile_report(dataframes, database_name)
     whole_data = {key: df.head(50) for key, df in dataframes.items()}
-
     profile_batches = list(chunk_dictionary(filtered_report, chunk_size=5))
     whole_batches = list(chunk_dictionary(whole_data, chunk_size=5))
 
